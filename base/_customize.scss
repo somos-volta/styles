@@ -1,0 +1,263 @@
+// @each $color, $value in $colors {
+// 	--#{$color}: #{$value};
+// }
+
+@mixin disect-color($name,$theme:light) {
+  $color: theme-color($name,$theme);
+  --#{$name}-hue:              #{hue($color)};
+  --#{$name}-saturation:       #{saturation($color)};
+  --#{$name}-lightness:        #{lightness($color)};
+}
+
+@mixin hsl-vars($name,$theme:light) {
+	--#{$name}-color: #{hsl(var(--#{$name}-hue),var(--#{$name}-saturation),var(--#{$name}-lightness))};
+}
+
+@mixin hsla-vars($name,$shade,$theme:light) {
+	--#{$shade}-color: #{hsla(var(--#{$name}-hue),var(--#{$name}-saturation),var(--#{$name}-lightness),var(--#{$shade}-alpha))};
+}
+
+@mixin customize() {
+
+	.mondrian {
+		/* Grid */
+		--grid-size:              #{.5rem};                      //  8px
+		--grid-half:              #{calc(var(--grid-size) / 2)}; //  4px
+
+		--grid-margin:            #{calc(var(--grid-size) * 3)}; // 24px
+		--grid-gutter:            #{calc(var(--grid-size) * 2)}; // 16px
+		--grid-spacing:           #{var(--grid-gutter)};         // 16px
+
+		--grid-typo:              #{calc(var(--grid-size) / 2)}; //  4px
+		--grid-baseline:          #{calc(var(--grid-size) * 4)}; // 16px
+
+		/* Spacing */
+		--spacing-xxs:            #{0.25rem};   //   4px
+		--spacing-xs:             #{0.5rem};    //   8px
+		--spacing-sm:             #{0.75rem};   //  12px
+		--spacing-md:             #{1rem};      //  16px
+		--spacing-lg:             #{1rem};      //  20px
+		--spacing-xl:             #{1.5rem};    //  24px
+		--spacing-xxl:            #{2rem};      //  32px
+
+		--spacing-small:          #{2.5rem};   //. 40px
+		--spacing-medium:         #{5rem};     //  80px
+		--spacing-large:          #{7.5rem};   // 120px
+
+		/* Elements */
+		--unit:                   #{val(--grid-size)};
+		--half:                   #{val(--grid-half)};
+		--baseline:               #{var(--grid-baseline)};
+		--margin:                 #{val(--grid-spacing)};
+		--gutter:                 #{val(--grid-gutter)};
+		--spacing:                #{val(--gutter)};
+
+		/* Container */
+		--max-width:              #{$container-max-size};
+		--fluid-width:            #{$container-fluid-size};
+
+		// $grid-margin:                #{3rem};
+		// $grid-gutter:                #{2rem};
+		// $baseline-factor:            #{.5};
+		// $baseline-size:              #{$grid-size * $baseline-factor;
+		// $container-max-size:         #{1200px}; // from larger
+		// $container-fluid-size:       #{100%};
+		// $column-count:               #{12};
+		// $column-gutter:              #{2rem};
+		// $column-size:                #{100%/$column-count};
+	}
+	.interactions {
+		--default:                #{$cursor-default};
+		--pointer:                #{$cursor-pointer};
+	}
+	.utilities {
+		/* Sizes */
+		--full-height:            #{$full-size-vh};
+		--three-fourths-height:   #{$three-fourths-vh};
+		--middle-height:          #{$half-size-vh};
+
+		/* Borders */
+		--thin:                   #{$border-size-thin};
+		--medium:                 #{$border-size-medium};
+		--thick:                  #{$border-size-thick};
+
+		--dotted:                 #{$border-style-dotted};
+		--dashed:                 #{$border-style-dashed};
+		--solid:                  #{$border-style-solid};
+		--double:                 #{$border-style-double};
+
+		/* Font weights */
+		--light:                  #{$font-weight-light};
+		--regular:                #{$font-weight-regular};
+		--medium:                 #{$font-weight-medium};
+		--bold:                   #{$font-weight-bold};
+		--black:                  #{$font-weight-black};
+
+		/* Shapes */
+		--rect:                   #{$shape-rect};
+		--round-xs:               #{$shape-rounded-xs};
+		--round-sm:               #{$shape-rounded-sm};
+		--round-md:               #{$shape-rounded-md};
+		--round-lg:               #{$shape-rounded-lg};
+		--round-xl:               #{$shape-rounded-xl};
+		--round:                  #{var(--round-md)};
+		--rounded:                #{var(--round-xl)};
+		--circle:                 #{$shape-circle};
+
+		/* Shadows */
+		--elevation-1:            #{$shadow-elevation-1};
+		--elevation-2:            #{$shadow-elevation-2};
+		--elevation-3:            #{$shadow-elevation-3};
+		--elevation-4:            #{$shadow-elevation-4};
+		--elevation-5:            #{$shadow-elevation-5};
+
+		--transition-1:           #{0.4s ease 0s};
+
+		--none:                   #{0};
+	}
+
+	[data-mode="light"], .light {
+		/* Content shades */
+		--high-emphasis-alpha:      #{.9};
+		--medium-emphasis-alpha:    #{.6};
+		--disabled-alpha:           #{.3};
+		--icon-active-alpha:        #{.9};
+		--icon-inactive-alpha:      #{.6};
+		--icon-disabled-alpha:      #{.4};
+		--input-alpha:              #{.2};
+		--border-alpha:             #{.2};
+		--divider-alpha:            #{.1};
+		--selection-alpha:          #{.1};
+		--highlight-alpha:          #{.2};
+
+		/* Colors parameters */
+		@include disect-color(content);
+		@include disect-color(accent);
+		@include disect-color(info);
+		@include disect-color(success);
+		@include disect-color(warning);
+		@include disect-color(danger);
+
+		--inverse-color:          #{$inverse-color};
+		--surface-color:          #{$surface-color};
+		--background-color:       #{$background-color};
+		--backdrop-color:         #{$backdrop-color};
+		--selection-color:        #{$selection-color};
+		--highlight-color:        #{$highlight-color};
+
+		/* Color system */
+		@include hsla-vars(content,solid);
+		@include hsla-vars(content,high-emphasis);
+		@include hsla-vars(content,medium-emphasis);
+		@include hsla-vars(content,disabled);
+		@include hsla-vars(content,icon-active);
+		@include hsla-vars(content,icon-inactive);
+		@include hsla-vars(content,icon-disabled);
+		@include hsla-vars(content,input);
+		@include hsla-vars(content,border);
+		@include hsla-vars(content,divider);
+
+		@include hsl-vars(accent);
+		@include hsl-vars(info);
+		@include hsl-vars(success);
+		@include hsl-vars(warning);
+		@include hsl-vars(danger);
+
+		color: var(--high-emphasis-color);
+	}
+	[data-theme="dark"], .dark, .inverse {
+		--high-emphasis-alpha:      #{1};
+		--medium-emphasis-alpha:    #{.7};
+		--disabled-alpha:           #{.4};
+		--icon-active-alpha:        #{.9};
+		--icon-inactive-alpha:      #{.6};
+		--icon-disabled-alpha:      #{.4};
+		--input-alpha:              #{.2};
+		--border-alpha:             #{.2};
+		--divider-alpha:            #{.1};
+
+		@include disect-color(content,dark);
+		@include disect-color(accent,dark);
+		@include disect-color(info,dark);
+		@include disect-color(success,dark);
+		@include disect-color(warning,dark);
+		@include disect-color(danger,dark);
+
+		--inverse-color:          #{$dark-inverse-color};
+		--surface-color:          #{$dark-surface-color};
+		--background-color:       #{$dark-background-color};
+		--backdrop-color:         #{$dark-backdrop-color};
+		--selection-color:        #{$dark-selection-color};
+		--highlight-color:        #{$dark-highlight-color};
+
+		/* No tocar esto*/
+		@include hsla-vars(content,solid,dark);
+		@include hsla-vars(content,high-emphasis,dark);
+		@include hsla-vars(content,medium-emphasis,dark);
+		@include hsla-vars(content,disabled,dark);
+		@include hsla-vars(content,icon-active,dark);
+		@include hsla-vars(content,icon-inactive,dark);
+		@include hsla-vars(content,icon-disabled,dark);
+		@include hsla-vars(content,input,dark);
+		@include hsla-vars(content,border,dark);
+		@include hsla-vars(content,divider,dark);
+
+		@include hsl-vars(accent,dark);
+		@include hsl-vars(info,dark);
+		@include hsl-vars(success,dark);
+		@include hsl-vars(warning,dark);
+		@include hsl-vars(danger,dark);
+
+		color: var(--high-emphasis-color);
+	}
+
+	:root {
+		/* Base font */
+		--font-family-title:      #{$font-family-title};
+		--font-family-base:       #{$font-family-base};
+		--font-size-base:         #{$font-size-base};
+		--font-weight-base:       #{$font-weight-base};
+		--line-height-base:       #{$line-height-base};
+
+		/* Navigation */
+		--navbar-background:      #{$clear};
+		--brand-max-height:       #{40px};
+
+		/* Forms and buttons */
+		--input-fill-color:       #{var(--input-color)};
+		--input-border-size:      #{var(--medium)};
+		--input-border-style:     #{var(--solid)};
+		--input-border-color:     #{var(--border-color)};
+		--input-text-color:       #{var(--high-emphasis-color)};
+		--input-font-weight:      #{500};
+		--input-line-height:      #{1rem};
+		--input-shape:            #{var(--rect)};
+		--input-padding:          #{1rem};
+		--input-height:           #{3rem};
+
+		--textarea-line-height:   #{1.5rem};
+
+		--button-fill-color:      #{var(--input-color)};
+		--button-border-size:     #{var(--input-border-size)};
+		--button-border-style:    #{var(--input-border-style)};
+		--button-border-color:    #{var(--input-border-color)};
+		--button-text-color:      #{var(--inverse-color)};
+		--button-font-weight:     #{var(--input-font-weight)};
+		--button-line-height:     #{var(--input-line-height)};
+		--button-shape:           #{var(--input-shape)};
+		--button-padding:         #{var(--input-padding)};
+		--button-height:          #{var(--input-height)};
+	}
+
+}
+
+@include exports("base/customize") {
+@if $include-customize {
+
+/* Custom properties
+// ========================================================================== */
+
+	@include customize();
+
+}
+}

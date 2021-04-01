@@ -1,0 +1,108 @@
+@mixin theme-mode($name) {
+  $mode: $name;
+
+  [data-mode="#{$name}"], .mode-#{$name}, .#{$mode} {
+    /* Base colors */
+    --background-color:        #{theme-color(background, $mode)};
+    --surface-color:           #{theme-color(surface, $mode)};
+    --translucent-color:       #{theme-color(translucent, $mode)};
+
+    --primary-color:           #{theme-color(accent, $mode)};
+    --text-color:              #{theme-color(high-emphasis, $mode)};
+    --inverse-color:           #{theme-color(inverse, $mode)};
+    --secondary-color:         #{theme-color(medium-emphasis, $mode)};
+    --disabled-color:          #{theme-color(disabled, $mode)};
+    --divider-color:           #{theme-color(divider, $mode)};
+    --input-color:             #{theme-color(input, $mode)};
+    --border-color:            #{theme-color(border, $mode)};
+    --link-color:              #{theme-color(accent, $mode)};
+    --link-hover-color:        #{theme-color(accent-dark, $mode)};
+    --link-text-color:         #{theme-color(medium-emphasis, $mode)};
+
+    --info-color:              #{theme-color(info, $mode)};
+    --success-color:           #{theme-color(success, $mode)};
+    --warning-color:           #{theme-color(warning, $mode)};
+    --danger-color:            #{theme-color(danger, $mode)};
+
+    color: var(--text-color);
+  }
+}
+
+@mixin custom {
+  :root {
+    /* Base font */
+    --font-family:             #{$font-family-base};
+    --font-size:               #{$font-size-base};
+    --font-weight:             #{$font-weight-base};
+    --line-height:             #{$line-height-base};
+    /* Grid */
+    --margin:                  #{1.5rem};
+    --gutter:                  #{1rem};
+    /* Content */
+    --line-spacing:            #{1rem};
+    /* Container */
+    --max-width:               #{$container-width};
+    --fluid-width:             #{$container-fluid-width};
+    /* Section */
+    --section-spacing:         #{5rem};
+    --section-title:           #{5rem};
+    /* Navigation */
+    --navbar-background:       #{var(--surface-color)};
+    --navbar-spacing:          #{1rem 0};
+    --main-section-height:     #{90vh};
+    /* Elements */
+    --brand-max-height:        #{40px};
+    --base-border:             #{2px solid};
+    --button-radius:           #{0};
+    /* Custom colors */
+    --notification-color:      #{$danger-color};
+    --discount-color:          #{var(--notification-color)};
+    --unavailable-color:       #{$danger-color};
+    --available-color:         #{#6daba3};
+
+    // Spacing
+    --spacing-header:          #{var(--line-spacing)};
+    --spacing-headings:        #{var(--line-spacing)};
+    --spacing-paragraph:       #{var(--line-spacing)};
+    --spacing-content:         #{var(--line-spacing)};
+    --spacing-lists:           #{var(--line-spacing)};
+    --spacing-lists-nested:    #{var(--line-spacing)};
+    --spacing-lists-item:      #{var(--line-spacing)};
+    --spacing-input:           #{var(--line-spacing)};
+    --spacing-caption:         #{calc(var(--line-spacing) * .5)};
+    --spacing-button:          #{var(--line-spacing)};
+  }
+  @include response(from phone) {
+    :root {
+      --margin:              #{2rem};
+    }
+  }
+
+}
+
+@include exports("base/customize") {
+@if $include-customize {
+@include css-comment("Custom properties");
+
+  @include theme-mode(light);
+  @include theme-mode(dark);
+  @include custom;
+
+}
+}
+
+// @each $color, $value in $colors {
+//  --#{$color}: #{$value};
+// }
+
+// --container-width: null;
+// --container-spacing: var(--grid-margin);
+// --navbar-background: <%= data.theme.styles.navbar_background %>;
+// --navbar-behavior: var(--hide-on-scroll);
+// --main-gallery-shape:  var(--rect);
+// --main-gallery-size:   95vh;
+// --main-gallery-spcing: var(--none);
+// --main-gallery-margin: var(--grid-margin);
+// --main-gallery-shape:  var(--rect);
+// --main-gallery-size:   90vh;
+// --discount-color:      #f4717d;

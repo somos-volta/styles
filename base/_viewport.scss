@@ -1,0 +1,14 @@
+@include exports("base/viewport") {
+@if $include-scaffold {
+@include css-section("Base styles");
+
+    // For off canvas layout works
+    html, body {
+      height: 100%;
+    }
+    body {
+      overflow-x: hidden;
+    }
+
+}
+}

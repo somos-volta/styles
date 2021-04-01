@@ -1,0 +1,12 @@
+@mixin reset-summary {
+@if $include-reset {
+
+	// Correct element displays
+
+	summary {
+		display: list-item; // Add the correct display in all browsers
+		cursor: pointer;
+	}
+
+}
+}

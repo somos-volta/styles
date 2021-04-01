@@ -1,0 +1,9 @@
+@mixin reset-progress {
+@if $include-reset {
+
+	progress {
+		vertical-align: baseline; // Add the correct vertical alignment in Chrome, Firefox, and Opera.
+	}
+
+}
+}

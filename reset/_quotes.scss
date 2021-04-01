@@ -1,0 +1,9 @@
+@mixin reset-quotes {
+@if $include-reset {
+
+	blockquote {
+		margin: 0 0 1rem;
+	}
+
+}
+}

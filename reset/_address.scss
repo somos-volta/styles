@@ -1,0 +1,11 @@
+@mixin reset-address {
+@if $include-reset {
+
+	address {
+	  margin-bottom: $spacing-content;
+	  font-style: normal;
+	  line-height: inherit;
+	}
+
+}
+}

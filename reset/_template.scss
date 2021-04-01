@@ -1,0 +1,11 @@
+@mixin reset-template {
+@if $include-reset {
+
+	// Correct element displays
+
+	template {
+		display: none; // Add the correct display in IE
+	}
+
+}
+}

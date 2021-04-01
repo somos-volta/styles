@@ -1,0 +1,11 @@
+@mixin reset-output {
+@if $include-reset {
+
+	// Correct element displays
+
+	output {
+		display: inline-block;
+	}
+
+}
+}

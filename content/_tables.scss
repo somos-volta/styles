@@ -1,0 +1,26 @@
+@include exports("content/tables") {
+@if $include-content {
+@include css-comment("Tables");
+
+	table {
+	  width: 100%;
+	  background-color: transparent;
+	  border-spacing: 0;
+	}
+
+	th,
+	td {
+	  padding: .5rem;
+	  text-align: left;
+	  border-bottom: 1px solid #E1E1E1; }
+
+	th:first-child,
+	td:first-child {
+	  padding-left: 0; }
+
+	th:last-child,
+	td:last-child {
+	  padding-right: 0; }
+
+}
+}

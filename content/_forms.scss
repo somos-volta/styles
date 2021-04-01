@@ -1,0 +1,118 @@
+@include exports("content/forms") {
+@if $include-content {
+@include css-comment("Forms");
+
+  // input[type="email"],
+  // input[type="number"],
+  // input[type="search"],
+  // input[type="date"],
+  // input[type="text"],
+  // input[type="tel"],
+  // input[type="url"],
+  // input[type="password"]
+
+  input, textarea, select {
+    --input-border: var(--base-border);
+
+    width: 100%;
+    background-color: var(--input-color);
+    border: var(--input-border);
+    border-color: var(--border-color);
+    padding: .5em 1em;
+  }
+
+  /* Removes awkward default styles on some inputs for iOS */
+  input, textarea, select {
+    font-weight: normal;
+    //line-height: 1.25;
+  }
+
+  textarea {
+    min-height: 65px;
+    //line-height: 1.5;
+  }
+
+  input:focus,
+  textarea:focus,
+  select:focus {
+    outline: 0;
+  }
+
+  label,
+  legend {
+    display: block;
+  }
+
+  legend {
+    color: #999;
+  }
+
+  fieldset {
+    padding: 0;
+    margin: 0;
+    border-width: 0;
+  }
+
+  input[type="checkbox"],
+  input[type="radio"] {
+    display: inline;
+    width: auto;
+  }
+
+  label > .label-body {
+    display: inline-block;
+    margin-left: .5rem;
+    font-weight: normal;
+  }
+
+  input::placeholder,
+  textarea::placeholder {
+    color: #aaa;
+  }
+
+  input:disabled,
+  select:disabled,
+  textarea:disabled {
+    color: #999;
+    background-color: #f6f6f6;
+  }
+
+  select {
+    //line-height: 1;
+    border-radius: 0; /* chrome osx */
+    padding-right: 2em !important;
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='12' fill='%23aaaaaa'><polygon points='12,4 24,4 18,10'/></svg>");
+    background-repeat: no-repeat;
+    background-position: right center;
+    background-size: 2.25em;
+    appearance: none;
+  }
+
+  select:hover,
+  select:focus {
+    background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='12' fill='%23222222'><polygon points='12,4 24,4 18,10'/></svg>");
+    cursor: pointer;
+  }
+
+  @media (min-width: 900px) {
+    .aligned input,
+    .aligned textarea,
+    .aligned select {
+      display: inline-block;
+      width: auto;
+    }
+
+    .aligned label {
+      text-align: right;
+      display: inline-block;
+      width: 18em;
+      margin: 0 1em 0 0;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+}
+}

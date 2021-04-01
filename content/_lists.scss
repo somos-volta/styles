@@ -1,0 +1,41 @@
+@include exports("content/lists") {
+@if $include-content {
+@include css-comment("Lists");
+
+  ul {
+    list-style: $list-style-ordered $list-bullet-position;
+  }
+
+  ol {
+    list-style: $list-style-unordered $list-bullet-position;
+  }
+
+  ol, ul, dl {
+    padding-left: 0;
+    margin: 0;
+  }
+  // ol, ul, dl {
+  //   padding-left: 0;
+  //   margin-top: 0;
+  //
+  //   & ol, ul, dl {
+  //     margin: $list-nested-margin;
+  //   }
+  // }
+
+  li {
+    margin-bottom: 0.75rem;
+    list-style: none;
+  }
+
+  dt {
+    font-weight: 500;
+    margin-bottom: 0.5rem;
+  }
+
+  dd {
+    margin: 0 0 1.5rem 0;
+  }
+
+}
+}

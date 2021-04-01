@@ -1,0 +1,48 @@
+@mixin icon($icon) {
+  @extend %icon;
+  &:before { content: $icon; }
+}
+
+@include exports("content/icons") {
+@if $include-content {
+@include css-comment("Icons");
+
+  %icon {
+    display: inline-block;
+    // use !important to prevent issues with
+    // browser extensions that change fonts
+    font-family: var(--icons-font) !important;
+    //speak: none;
+    speak: never;
+    font-style: normal;
+    font-weight: normal;
+    font-variant: normal;
+    text-transform: none;
+    text-rendering: auto;
+    line-height: 1;
+
+    /* Better Font Rendering */
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  i, .ico, .icon, .icons {
+    @extend %icon;
+  }
+
+  // Icon sizes
+  .icon-xs  { font-size:  8px; }
+  .icon-sm  { font-size: 16px; }
+  .icon-md  { font-size: 20px; }
+  .icon-lg  { font-size: 24px; }
+  .icon-xl  { font-size: 32px; }
+  .icon-xxl { font-size: 64px; }
+
+  // .icon-mini   { width: 10px; height: 10px; }
+  // .icon-small  { width: 12px; height: 12px; }
+  // .icon-medium { width: 16px; height: 16px; }
+  // .icon-big    { width: 20px; height: 20px; }
+  // .icon-large  { width: 24px; height: 24px; }
+
+}
+}

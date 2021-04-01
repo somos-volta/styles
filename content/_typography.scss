@@ -1,0 +1,22 @@
+@include exports("content/typography") {
+@if $include-content {
+
+@include css-comment("Heading");
+
+  h1, h2, h3, h4, h5, h6 {
+    font-weight: $font-weight-heading;
+  }
+
+  @if $include-typography-classes {
+  @include css-comment("Typeset");
+
+    @each $name, $props in $typography {
+      .type-#{$name} {
+        @include expose-map($props);
+      }
+    }
+
+  }
+
+}
+}

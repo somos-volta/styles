@@ -1,0 +1,30 @@
+@include exports("content/code") {
+@if $include-content {
+
+  @include css-comment("Code");
+
+  code {
+    padding: .3rem .6rem;
+    font-size: 90%;
+    white-space: nowrap;
+    background: #fafafa;
+    border: 1px solid #E1E1E1;
+    border-radius: 4px;
+  }
+
+  pre {
+    margin-top: 0;
+    word-break: break-all;
+    word-wrap: break-word;
+    white-space: pre;
+    white-space: pre-wrap;
+  }
+
+  pre > code {
+    display: block;
+    white-space: pre;
+    overflow-x: auto;
+  }
+
+}
+}

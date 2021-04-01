@@ -1,0 +1,42 @@
+
+$caret-border-width:   1px !default;
+$caret-height-base:    80px !default;
+
+@mixin caret-size($size) {
+  $this-caret-height:        $size;
+  $this-caret-height:         ($this-caret-height - ($caret-border-width * 2)) / 2;
+  $this-caret-width:          10px;
+  $this-border-caret-height:  $this-caret-height + 2;
+  $this-border-caret-width:   $this-caret-width + 1;
+  height: $this-caret-height;
+  &:after  {
+    border-width: $this-caret-height $this-caret-width;
+    margin-top: -($this-caret-height);
+    right: -($this-caret-width * 2);
+  }
+  &:before {
+    border-width: $this-border-caret-height $this-border-caret-width;
+    margin-top: -($this-border-caret-height);
+    right: -($this-border-caret-width * 2);
+  }
+}
+
+@mixin caret-item($color,$next:false) {
+  $background: $color;
+  $border: darken($color,10%);
+  $factor: 5%;
+  //background-color: $background;
+  //border-color: $border;
+  &:after  { border-left-color: $background; }
+  &:before { border-left-color: $border; }
+}
+@mixin caret-color($color) {
+  $border: darken($color,10%);
+  a {
+    &:before { border-left-color: $border; }
+  }
+  a:hover {
+    &:before { border-left-color: $border; }
+  }
+}
+

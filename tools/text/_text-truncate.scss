@@ -1,0 +1,47 @@
+
+// Truncates text and adds an ellipsis to represent overflow.
+//
+// @param {Number} $width [100%]
+//   Max-width for the string to respect before being truncated
+//
+// @example scss - Usage
+//   .element {
+//     @include ellipsis;
+//   }
+//
+// @example css - CSS Output
+//   .element {
+//     display: inline-block;
+//     max-width: 100%;
+//     overflow: hidden;
+//     text-overflow: ellipsis;
+//     white-space: nowrap;
+//     word-wrap: normal;
+//   }
+
+@mixin ellipsis($width: 100%, $display: inline-block) {
+  display: $display;
+  max-width: $width;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
+// Text truncate
+// Requires inline-block or block for proper styling
+
+@mixin text-truncate {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+// Text overflow
+//
+// Requires inline-block or block for proper styling
+%ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}

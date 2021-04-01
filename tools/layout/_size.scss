@@ -1,0 +1,19 @@
+// Sizing shortcuts
+@mixin size($width, $height) {
+  width: $width;
+  height: $height;
+}
+
+@mixin size-y($height) {
+  width: auto;
+  height: $height;
+}
+
+@mixin size-x($width) {
+  width: $width;
+  height: auto;
+}
+
+@mixin square($size) {
+  @include size($size, $size);
+}

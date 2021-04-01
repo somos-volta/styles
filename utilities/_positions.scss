@@ -1,0 +1,63 @@
+// https://www.w3schools.com/howto/howto_css_sticky_element.asp
+// https://www.w3.org/community/webed/wiki/CSS/Training/borders
+//
+
+@include exports("utilities/layout") {
+@if $include-utilities {
+
+    .p-static,   .position-static       { position: static !important; }
+    .p-relative, .position-relative     { position: relative !important; }
+    .p-absolute, .position-absolute     { position: absolute !important; }
+    .p-fixed,    .position-fixed        { position: fixed !important; }
+    .p-sticky,    .position-sticky       { position: sticky !important; }
+
+    .fixed-top,
+    .fixed-right,
+    .fixed-bottom,
+    .fixed-left {
+        position: fixed;
+        z-index: 1030;
+    }
+
+    .fixed-top {
+        top: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .fixed-right {
+        top: 0;
+        bottom: 0;
+        right: 0;
+    }
+
+    .fixed-bottom {
+        bottom: 0;
+        right: 0;
+        left: 0;
+    }
+
+    .fixed-left {
+        top: 0;
+        bottom: 0;
+        left: 0;
+    }
+
+}
+}
+
+//
+// OLD sticky footer
+//
+// #wrapper {
+//   min-height: 100%;
+//   height: auto !important;
+//   height: 100%;
+//   margin: 0 auto -345px;
+// }
+//
+// #footer, #wrapper-push {
+//   height: 345px;
+//   /* clear: both; */
+// }
+//

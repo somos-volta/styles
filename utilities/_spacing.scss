@@ -1,0 +1,38 @@
+@mixin margin-classes($infix,$size,$breakpoint:"") {
+  .#{$breakpoint}m-#{$infix},  .#{$breakpoint}m-#{$infix}  { margin:        $size !important; }
+  .#{$breakpoint}my-#{$infix}, .#{$breakpoint}mt-#{$infix} { margin-top:    $size !important; }
+  .#{$breakpoint}mx-#{$infix}, .#{$breakpoint}mr-#{$infix} { margin-right:  $size !important; }
+  .#{$breakpoint}my-#{$infix}, .#{$breakpoint}mb-#{$infix} { margin-bottom: $size !important; }
+  .#{$breakpoint}mx-#{$infix}, .#{$breakpoint}ml-#{$infix} { margin-left:   $size !important; }
+}
+@mixin padding-classes($infix,$size,$breakpoint:"") {
+  .#{$breakpoint}p-#{$infix},  .#{$breakpoint}p-#{$infix}  { padding:        $size !important; }
+  .#{$breakpoint}py-#{$infix}, .#{$breakpoint}pt-#{$infix} { padding-top:    $size !important; }
+  .#{$breakpoint}px-#{$infix}, .#{$breakpoint}pr-#{$infix} { padding-right:  $size !important; }
+  .#{$breakpoint}py-#{$infix}, .#{$breakpoint}pb-#{$infix} { padding-bottom: $size !important; }
+  .#{$breakpoint}px-#{$infix}, .#{$breakpoint}pl-#{$infix} { padding-left:   $size !important; }
+}
+
+@include exports("utilities/spacing") {
+@if $include-utilities {
+//@if $include-spacing-classes {
+
+  /* SPACERS */
+  /* ========================================================================== */
+
+  @each $infix, $size in $spacers {
+    @include margin-classes($infix,$size);
+    @include padding-classes($infix,$size);
+  }
+
+  @each $name, $size in $breakpoints {
+    @include response(from $name) {
+      @each $infix, $size in $spacers {
+        @include margin-classes($infix,$size,"#{$name}\\:");
+        @include padding-classes($infix,$size,"#{$name}\\:");
+      }
+    }
+  }
+
+}
+} // End Export

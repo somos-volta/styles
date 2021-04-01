@@ -1,0 +1,20 @@
+@include exports("utilities/text") {
+@if $include-utilities {
+
+  .text-left     { text-align: left; }
+  .text-center   { text-align: center; }
+  .text-right    { text-align: right; }
+
+  .text-upper    { text-transform: uppercase; }
+  .text-lower    { text-transform: lowercase; }
+
+  .text-light    { font-weight: $font-weight-light; }
+  .text-regular  { font-weight: $font-weight-regular; }
+  .text-medium   { font-weight: $font-weight-medium; }
+  .text-bold     { font-weight: $font-weight-bold; }
+  .text-black    { font-weight: $font-weight-black; }
+
+  .text-hide     { @include text-hide; }
+
+}
+}

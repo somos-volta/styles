@@ -1,0 +1,29 @@
+@include exports("utilities/align") {
+@if $include-utilities {
+
+  .align-baseline       { vertical-align: baseline !important; } // Browser default
+  .align-top            { vertical-align: top !important; }
+  .align-middle         { vertical-align: middle !important; }
+  .align-bottom         { vertical-align: bottom !important; }
+  .align-text-bottom    { vertical-align: text-bottom !important; }
+  .align-text-top       { vertical-align: text-top !important; }
+
+  .align-items-top,
+  .align-items-start    { align-items: flex-start !important; }
+  .align-items-bottom,
+  .align-items-end      { align-items: flex-end !important; }
+  .align-items-center   { align-items: center !important; }
+  .align-items-baseline { align-items: baseline !important; }
+  .align-items-stretch  { align-items: stretch !important; }
+
+  .content-start        { justify-content: flex-start; }
+  .content-center       { justify-content: center; }
+  .content-end          { justify-content: flex-end; }
+
+  .space-around         { justify-content: space-around; }
+  .space-between        { justify-content: space-between; }
+  .space-evenly         { justify-content: space-evenly; }
+
+  .m-auto { margin-left: auto; margin-right: auto;}
+}
+}

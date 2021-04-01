@@ -1,0 +1,46 @@
+@include exports("utilities/display") {
+@if $include-utilities {
+
+  // Phone
+  .hidden-phone        { display: none !important; }
+  .hidden-tablet       { display: inherit !important; }
+  .hidden-desktop      { display: inherit !important; }
+  .visible-desktop     { display: none !important; }
+  .visible-tablet      { display: none !important; }
+  .visible-phone       { display: inherit !important; }
+
+  // Tablet
+  @include response(from tablet) {
+    .hidden-phone      { display: inherit !important; }
+    .hidden-tablet     { display: none !important; }
+    .hidden-desktop    { display: inherit !important; }
+    .visible-desktop   { display: none !important; }
+    .visible-tablet    { display: inherit !important; }
+    .visible-phone     { display: none !important; }
+  }
+
+  // Desktop
+  @include response(from desktop) {
+    .hidden-phone      { display: inherit !important; }
+    .hidden-tablet     { display: inherit !important; }
+    .hidden-desktop    { display: none !important; }
+    .visible-desktop   { display: inherit !important; }
+    .visible-tablet    { display: none !important; }
+    .visible-phone     { display: none !important; }
+  }
+
+  .visible-print     { display: none !important; }
+
+  @media print {
+    .visible-print   { display: inherit !important; }
+    .hidden-print    { display: none !important; }
+  }
+
+  .normal            { display: inherit !important; }
+  .hidden            { display: none !important; }
+  .block             { display: block !important; }
+  .inline            { display: inline-block !important; *display: inline; /*IE 6/7*/ }
+  .nowrap            { white-space: nowrap; }
+
+}
+}

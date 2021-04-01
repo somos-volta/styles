@@ -1,0 +1,120 @@
+@include exports("component/navbar") {
+@if $include-components {
+@include css-comment("Navbar");
+
+	.navbar {
+		// --background: var(--navbar-background);
+		// --vertical-spacing: null;
+		// background: var(--background);
+		// padding-top: var(--vertical-spacing);
+		// padding-bottom: var(--vertical-spacing);
+		display: block;
+		width: 100%;
+		z-index: $zindex-fixed;
+		background: var(--navbar-background);
+		padding: var(--navbar-spacing);
+	}
+
+	%navbar-element {
+		align-self: center;
+	}
+	.navbar-menu {
+    @extend %navbar-element;
+  }
+	.navbar-button {
+		@extend %navbar-element;
+		position: relative;
+	}
+	.navbar-brand {
+		@extend %navbar-element;
+		// --max-height: var(--brand-max-height);
+		// max-height: var(--max-height);
+		color: var(--text-color);
+		position: relative;
+		font-size: 1.5rem;
+		font-weight: bold;
+		max-height: 5rem;
+
+		&:hover {
+			text-decoration: none;
+		}
+		//span {
+		//	margin-top: 17px;
+		//	font-size: 28px;
+		//	font-weight: 500;
+		//	letter-spacing: -0.04em;
+		//}
+	}
+
+	.navbar-spacer {
+		flex-grow: 1;
+	}
+
+	.navbar-icon {
+		font-size: 1.75rem;
+		padding: .5rem;
+	}
+	.menu-icon {
+		margin-right: 1rem;
+	}
+
+
+	@include response(to tablet) {
+
+
+		.navbar-menu {
+			position: absolute;
+			align-items: center;
+			display: block !important;
+			z-index: -1;
+			width: 100%;
+			padding-top: 5rem;
+			padding-bottom: 2rem;
+			left: 0;
+			right: 0;
+			top: -1rem;
+			background: white;
+			will-change: opacity;
+			transition: all $transition-1;
+			transform: translate3d(0, -20%, 0);
+			box-shadow: $shadow-elevation-2;
+			pointer-events: none;
+			opacity: 0;
+
+			.menu-label,
+			.menu-link {
+				font-size: 24px;
+			}
+		}
+
+		.navbar-menu {
+			&.opened {
+				transform: translate3d(0, 0, 0);
+				pointer-events: auto;
+				opacity: 1;
+			}
+			> .menu-item {
+				padding: .75rem var(--margin);
+			}
+			.menu-link:hover {
+				text-decoration: none;
+			}
+		}
+	}
+
+	@include response(from tablet) {
+		.navbar-menu {
+			display: flex;
+			//flex-grow: 1;
+			margin: 0 1rem;
+		}
+		.navbar {
+			.menu-label,
+			.menu-link {
+				padding: 1rem;
+			}
+		}
+	}
+
+}
+}

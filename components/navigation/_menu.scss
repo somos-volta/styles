@@ -1,0 +1,50 @@
+@include exports("component/menu") {
+@if $include-components {
+@include css-comment("Menu");
+
+  .menu {
+    padding-left: 0;
+    //color: var(--secondary-color);
+  }
+
+  .menu-item {
+    list-style: none;
+    //position: relative;
+    margin-bottom: 0;
+    vertical-align: middle;
+  }
+
+  .menu-divider {
+    list-style: none;
+    margin-bottom: 0;
+    vertical-align: middle;
+    hr {
+      margin: 1rem;
+    }
+  }
+
+
+  %menu-control {
+    display: block;
+    //display: flex;
+    //justify-content: space-between;
+    //align-items: center;
+  }
+
+  .menu-title,
+  .menu-label,
+  .menu-link {
+    @extend %menu-control;
+  }
+
+  //.menu-link {
+  //  & {
+  //    color: inherit;
+  //  }
+  //  &:hover {
+  //    color: var(--text-color);
+  //  }
+  //}
+
+}
+}

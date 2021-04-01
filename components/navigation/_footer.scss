@@ -1,0 +1,10 @@
+@include exports("component/footer") {
+@if $include-components {
+@include css-comment("Footer");
+
+  footer {
+    overflow: hidden;
+  }
+
+}
+}

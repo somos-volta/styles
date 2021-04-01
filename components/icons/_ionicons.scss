@@ -1,0 +1,55 @@
+@include exports("components/icons") {
+@if $include-ionicons {
+@include css-comment("Icons");
+
+  :root {
+    --icons-font: "Ionicons";
+  }
+
+  @font-face {
+    font-family: "Ionicons";
+    src: url("/assets/fonts/ionicons.eot?v=2.0.2");
+    src:
+      url("/assets/fonts/ionicons.eot?v=2.0.2#iefix") format("embedded-opentype"),
+      url("/assets/fonts/ionicons.ttf?v=2.0.2") format("truetype"),
+      url("/assets/fonts/ionicons.woff?v=2.0.2") format("woff"),
+      url("/assets/fonts/ionicons.svg?v=2.0.2#Ionicons") format("svg");
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  .icon-android-arrow-back         { @include icon(""); }
+  .icon-android-arrow-forward      { @include icon(""); }
+  .icon-android-cart               { @include icon(""); }
+  .icon-android-favorite           { @include icon(""); }
+  .icon-android-favorite-outline   { @include icon(""); }
+  .icon-android-lock               { @include icon(""); }
+  .icon-android-search             { @include icon(""); }
+  .icon-android-star               { @include icon(""); }
+  .icon-android-star-half          { @include icon(""); }
+  .icon-android-star-outline       { @include icon(""); }
+  .icon-arrow-expand               { @include icon(""); }
+  .icon-bag                        { @include icon(""); }
+  .icon-checkmark-circled          { @include icon(""); }
+  .icon-help-buoy                  { @include icon(""); }
+  .icon-arrow-left                 { @include icon(""); }
+  .icon-arrow-right                { @include icon(""); }
+  .icon-navicon                    { @include icon(""); }
+  .icon-social-facebook            { @include icon(""); }
+  .icon-social-facebook-outline    { @include icon(""); }
+  .icon-social-googleplus          { @include icon(""); }
+  .icon-social-googleplus-outline  { @include icon(""); }
+  .icon-social-instagram           { @include icon(""); }
+  .icon-social-instagram-outline   { @include icon(""); }
+  .icon-social-skype               { @include icon(""); }
+  .icon-social-skype-outline       { @include icon(""); }
+  .icon-social-tumblr              { @include icon(""); }
+  .icon-social-twitter             { @include icon(""); }
+  .icon-social-twitter-outline     { @include icon(""); }
+  .icon-social-whatsapp            { @include icon(""); }
+  .icon-social-whatsapp-outline    { @include icon(""); }
+  .icon-social-youtube             { @include icon(""); }
+  .icon-social-youtube-outline     { @include icon(""); }
+
+}
+}

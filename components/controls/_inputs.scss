@@ -1,0 +1,59 @@
+@include exports("component/inputs") {
+@if $include-components {
+@include css-comment("Inputs");
+
+	@include response(to phone) {
+		.form-inline {
+		}
+		.form-control {
+			margin-bottom: 1rem;
+		}
+	}
+	@include response(from phone) {
+		.form-inline {
+			display: flex;
+		}
+		.form-control {
+			display: flex;
+		}
+	}
+
+	.input {
+		line-height: 1;
+	}
+	.select {
+		line-height: 1.5;
+	}
+	.select, .input {
+		--input-text-color:  var(--text-color);
+		--input-border-color:  var(--border-color);
+		--input-fill-color: transparent;
+    --input-border: var(--base-border);
+		--input-shape: 0px;
+
+		border: var(--input-border);
+		border-color: var(--input-border-color);
+		border-radius: var(--input-shape);
+		background-color: var(--input-fill-color);
+		color: var(--input-text-color);
+		padding: .5em .75em;
+		transition: $transition-1;
+
+		&:focus {
+			--input-border-color:  var(--text-color);
+		}
+
+		//height: 42px;
+		//padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+		//background-color: #fff;
+		//border: 1px solid #D1D1D1;
+		//box-sizing: border-box;
+
+		&.small {
+			font-size: .875rem;
+		}
+	}
+
+
+}
+}

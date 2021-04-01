@@ -1,0 +1,49 @@
+// BREAKPOINTS */
+// ========================================================================== */
+//
+// Define the minimum dimensions at which your layout will change,
+// adapting to different screen sizes, for use in media queries.
+//
+//	xs	phone	-> Portrait phones (Extra small devices)
+//	sm	tablet	-> Landscape phones or phablets (Small devices)
+//	md	laptop	-> Tablets (Medium devices)
+//	lg	desktop	-> Tablet portrait, Desktops (Large devices)
+//	xl	cinema	-> Normal Desktop
+//
+
+// Breakpoints
+
+$breakpoint-xs:      480px !default; // to phone
+$breakpoint-sm:      768px !default; // from phone to tablet
+$breakpoint-md:      992px !default; // from tablet to desktop
+$breakpoint-lg:     1200px !default; // from desktop to larger
+$breakpoint-xl:     1400px !default; // from larger
+
+$breakpoints: (
+  xs:               $breakpoint-xs,
+  sm:               $breakpoint-sm,
+  md:               $breakpoint-md,
+  lg:               $breakpoint-lg,
+  xl:               $breakpoint-xl,
+) !default;
+
+$devices: (
+  phone:            xs,
+  tablet:           sm,
+  laptop:           md,
+  desktop:          lg,
+  cinema:           xl,
+) !default;
+
+// $breakpoints: (
+//   phone:          $phone-size,
+//   tablet:         $tablet-size,
+//   laptop:         $laptop-size,
+//   desktop:        $desktop-size,
+//   cinema:         $cinema-size,
+//   container:      $container-width,
+// ) !default;
+
+// @mixin new-breakepoint($name,$size,$orientation:false) {
+//
+// }

@@ -1,0 +1,182 @@
+// sitepoint.com/dealing-color-schemes-sass/
+// https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
+// https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
+// https://medium.com/@sanuthadathil/theme-and-color-scheme-sass-way-a62d68614ef3
+// https://zellwk.com/blog/organizing-multiple-theme-styles-with-sass/
+// https://codeburst.io/a-successful-sass-theme-structure-ca9d1c477dc7
+// https://blog.prototypr.io/how-i-theme-my-react-app-with-sass-414e8f905541
+// https://itnext.io/theming-with-css-custom-properties-variables-and-calc-a89b37ad0013
+// https://www.toptal.com/front-end/dynamic-css-with-custom-properties
+// https://www.youtube.com/watch?v=ZU0wY6L1d7U
+// https://www.smashingmagazine.com/2018/05/css-custom-properties-strategy-guide/
+// https://blog.logrocket.com/how-to-create-better-themes-with-css-variables-5a3744105c74/
+// https://stackoverflow.com/questions/56490436/nested-css-custom-properties-css-variables-with-media-queries-in-ie-11
+// https://codepen.io/finnhvman/post/theming-with-css-variables-in-rgba
+//
+// https://sparanoid.com/note/css-variables-guide/
+
+// Themes
+  $default-theme:          light !default;
+
+// 2. System
+  $content-color:          color(black) !default;
+  $inverse-color:          color(white) !default;
+  $surface-color:          color(white) !default;
+  $background-color:       color(white) !default;
+  $backdrop-color:         rgba(18, 25, 24, 0.2) !default;
+  $selection-color:        color(blue) !default;
+  $highlight-color:        color(yellow) !default;
+  $accent-color:           color(blue) !default;
+  $info-color:             color(indigo) !default;
+  $success-color:          color(green) !default;
+  $warning-color:          color(yellow) !default;
+  $danger-color:           color(red) !default;
+
+  $dark-content-color:     color(white) !default;
+  $dark-inverse-color:     color(black) !default;
+  $dark-surface-color:     color(black) !default;
+  $dark-background-color:  color(black) !default;
+  $dark-backdrop-color:    rgba(18, 25, 24, 0.2) !default;
+  $dark-selection-color:   color(blue) !default;
+  $dark-highlight-color:   color(yellow) !default;
+  $dark-accent-color:      color(blue) !default;
+  $dark-info-color:        color(indigo) !default;
+  $dark-success-color:     color(green) !default;
+  $dark-warning-color:     color(yellow) !default;
+  $dark-danger-color:      color(red) !default;
+
+  //$bootic-color:               #31C7B5;
+  //$accent-color:               $bootic-color;
+  //$dark-accent-color:          $bootic-color;
+
+// Theme shades
+
+  $light-shades: (
+    base:                  1, // Base color
+    high-emphasis:        .9, // High-emphasis text
+    medium-emphasis:      .6, // Medium-emphasis text
+    disabled:             .4, // Disabled text
+    icon-active:          .9,
+    icon-inactive:        .6,
+    icon-disabled:        .3,
+    selection:            .1, // Text selection shade
+    highlight:            .2, // Text highligh shade
+    input:                .05,
+    border:               .2,
+    divider:              .1,
+  ) !default;
+
+  $dark-shades: (
+    base:                  1, // Base color
+    high-emphasis:         1, // High-emphasis text
+    medium-emphasis:      .8, // Medium-emphasis text
+    disabled:             .4, // Disabled text
+    icon-active:          .1,
+    icon-inactive:        .7,
+    icon-disabled:        .4,
+    selection:            .1, // Text selection shade
+    highlight:            .2, // Text highligh shade
+    input:                .05,
+    border:               .3,
+    divider:              .2,
+  ) !default;
+
+  $theme-shades: (
+    light: $light-shades,
+    dark: $dark-shades,
+  ) !default;
+
+  @function get-shades($_name:$default-theme) {
+    @return map-get($theme-shades,$_name);
+  }
+
+  @function theme-shade($_name,$_theme:$default-theme) {
+    $_shades: get-shades($_theme);
+    @return map-get($_shades,$_name);
+  }
+
+
+// Theme colors
+
+  $light-colors: (
+    content:               $content-color,
+    inverse:               $inverse-color,
+    accent:                $accent-color,
+
+    primary:               $accent-color,
+    info:                  $info-color,
+    success:               $success-color,
+    warning:               $warning-color,
+    danger:                $danger-color,
+
+    primary-dark:          shade($accent-color,  2%),
+    info-dark:             shade($info-color,    2%),
+    success-dark:          shade($success-color, 2%),
+    warning-dark:          shade($warning-color, 2%),
+    danger-dark:           shade($danger-color,  2%),
+
+    surface:               $surface-color,
+    translucent:           rgba($surface-color,.8),
+    background:            $background-color,
+    selection:             rgba($selection-color, theme-shade(selection)),
+    highlight:             rgba($highlight-color, theme-shade(highlight)),
+
+    high-emphasis:         rgba($content-color, theme-shade(high-emphasis)),
+    medium-emphasis:       rgba($content-color, theme-shade(medium-emphasis)),
+    disabled:              rgba($content-color, theme-shade(disabled)),
+    icon-active:           rgba($content-color, theme-shade(icon-active)),
+    icon-inactive:         rgba($content-color, theme-shade(icon-inactive)),
+    icon-disabled:         rgba($content-color, theme-shade(icon-disabled)),
+    border:                rgba($content-color, theme-shade(border)),
+    divider:               rgba($content-color, theme-shade(divider)),
+    input:                 rgba($content-color, theme-shade(input)),
+  ) !default;
+
+
+  $dark-colors: (
+    content:               $dark-content-color,
+    inverse:               $dark-inverse-color,
+    accent:                $dark-accent-color,
+
+    primary:               $dark-accent-color,
+    info:                  $dark-info-color,
+    success:               $dark-success-color,
+    warning:               $dark-warning-color,
+    danger:                $dark-danger-color,
+
+    primary-dark:          shade($dark-accent-color,  2%),
+    info-dark:             shade($dark-info-color,    2%),
+    success-dark:          shade($dark-success-color, 2%),
+    warning-dark:          shade($dark-warning-color, 2%),
+    danger-dark:           shade($dark-danger-color,  2%),
+
+    surface:               $dark-surface-color,
+    translucent:           rgba($dark-surface-color,.9),
+    background:            $dark-background-color,
+    selection:             rgba($dark-selection-color, theme-shade(selection, dark)),
+    highlight:             rgba($dark-highlight-color, theme-shade(highlight, dark)),
+
+    high-emphasis:         rgba($dark-content-color, theme-shade(high-emphasis, dark)),
+    medium-emphasis:       rgba($dark-content-color, theme-shade(medium-emphasis, dark)),
+    disabled:              rgba($dark-content-color, theme-shade(disabled, dark)),
+    icon-active:           rgba($dark-content-color, theme-shade(icon-active, dark)),
+    icon-inactive:         rgba($dark-content-color, theme-shade(icon-inactive, dark)),
+    icon-disabled:         rgba($dark-content-color, theme-shade(icon-disabled, dark)),
+    border:                rgba($dark-content-color, theme-shade(border, dark)),
+    divider:               rgba($dark-content-color, theme-shade(divider, dark)),
+    input:                 rgba($dark-content-color, theme-shade(input, dark)),
+  ) !default;
+
+  $theme-colors: (
+    light: $light-colors,
+    dark: $dark-colors,
+  ) !default;
+
+  @function get-theme($_name:$default-theme) {
+    @return map-get($theme-colors,$_name);
+  }
+
+  @function theme-color($_name,$_theme:$default-theme) {
+    $_colors: get-theme($_theme);
+    @return map-get($_colors,$_name);
+  }

@@ -1,0 +1,38 @@
+// Z-index master list
+//
+// Warning: Avoid customizing these values. They're used for a bird's eye view
+// of components dependent on the z-axis and are designed to all work together.
+
+// scss-docs-start zindex-stack
+$zindex-dropdown:                   1000 !default;
+$zindex-sticky:                     1020 !default;
+$zindex-fixed:                      1030 !default;
+$zindex-modal-backdrop:             1040 !default;
+$zindex-modal:                      1050 !default;
+$zindex-popover:                    1060 !default;
+$zindex-tooltip:                    1070 !default;
+
+$shadow-color: rgb(67,86,100) !default;
+
+$shadow-elevation-1: 0  1px  2px 0 rgba($shadow-color,0.00), 0 2px  5px 0 rgba($shadow-color,0.12) !default;
+$shadow-elevation-2: 0  2px  4px 0 rgba($shadow-color,0.10), 0 5px  8px 0 rgba($shadow-color,0.12) !default;
+$shadow-elevation-3: 0  4px  8px 0 rgba($shadow-color,0.10), 0 8px 16px 0 rgba($shadow-color,0.08) !default;
+$shadow-elevation-4: 0 16px 32px 0 rgba($shadow-color,0.17) !default;
+$shadow-elevation-5: 0 61px 84px 0 rgba($shadow-color,0.14) !default;
+
+//
+// $shadow-color: $black !default;
+//
+// $shadow-elevation-1: 0  1px  1px 0 rgba($shadow-color,0.12), 0  1px 1px 0 rgba($shadow-color,0.24)!default;
+// $shadow-elevation-2: 0  3px  3px 0 rgba($shadow-color,0.16), 0  3px 3px 0 rgba($shadow-color,0.23)!default;
+// $shadow-elevation-3: 0 10px 10px 0 rgba($shadow-color,0.19), 0  6px 3px 0 rgba($shadow-color,0.23)!default;
+// $shadow-elevation-4: 0 14px 14px 0 rgba($shadow-color,0.25), 0 10px 5px 0 rgba($shadow-color,0.22)!default;
+// $shadow-elevation-5: 0 19px 19px 0 rgba($shadow-color,0.30), 0 15px 6px 0 rgba($shadow-color,0.22)!default;
+//
+//
+// $shadow-elevation-1:  -1px  1px  2px 0 rgba($shadow-color,0.00), -2px 2px  5px 0 rgba($shadow-color,0.12) !default;
+// $shadow-elevation-2:  -1px  2px  4px 0 rgba($shadow-color,0.10), -4px 5px  8px 0 rgba($shadow-color,0.12) !default;
+// $shadow-elevation-3:  -4px  4px  8px 0 rgba($shadow-color,0.10), -8px 8px 16px 0 rgba($shadow-color,0.08) !default;
+// $shadow-elevation-4: -16px 16px 32px 0 rgba($shadow-color,0.17) !default;
+// $shadow-elevation-5: -41px 61px 84px 0 rgba($shadow-color,0.14) !default;
+//

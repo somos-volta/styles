@@ -1,0 +1,76 @@
+// https://builttoadapt.io/8-point-grid-vertical-rhythm-90d05ad95032
+// https://zellwk.com/blog/why-vertical-rhythms/
+$baseline:                   16px;
+
+$baseline-factor:            .5 !default;
+
+$grid-size:                  .5rem !default;
+$grid-half:                  $grid-size / 2 !default;
+$grid-margin:                $grid-size * 4 !default;
+$grid-gutter:                $grid-size * 2 !default;
+$grid-spacing:               $grid-size * 2 !default;;
+$grid-baseline:              $grid-size * $baseline-factor;
+
+// System
+
+// Percents
+$size-une-fifth:             20%;
+$size-une-fourth:            25%;
+$size-une-third:             33.333%;
+$size-two-fifth:             40%;
+$size-two-fourth:            50%;
+$size-three-fifth:           60%;
+$size-two-third:             66.666%;
+$size-three-fourth:          75%;
+
+// Viewports
+$full-size-vh:               100vh;
+$three-fourths-vh:           75vh;
+$half-size-vh:               50vh;
+
+// Sizes
+$unit:                       $grid-size;
+
+$size-0:                     0;
+$size-x_5:                   $unit * .5;      //   4px
+$size-x1:                    $unit;           //   8px
+$size-x1_5:                  $unit * 1.5;     //  12px
+$size-x2:                    $unit * 2;       //  16px
+$size-x2_5:                  $unit * 2.5;     //  20px
+$size-x3:                    $unit * 3;       //  24px
+//$size-x3_5:                $unit * 3.5;     //  28px
+$size-x4:                    $unit * 4;       //  32px
+//$size-x4_5:                $unit * 4.5;     //  36px
+$size-x5:                    $unit * 5;       //  40px
+
+$size-x10:                   $unit * 10;      //  80px
+$size-x15:                   $unit * 15;      // 120px
+$size-x20:                   $unit * 20;      // 160px
+$size-x30:                   $unit * 30;      // 240px
+
+
+// $spacers: (
+//     0:      0,
+//     x0_5:   $unit-x0_5,
+//     x1:     $unit-x1,
+//     x1_5:   $unit-x1_5,
+//     x2:     $unit-x2,
+//     x3:     $unit-x3,
+//     x4:     $unit-x4,
+//     x5:     $unit-x5,
+//
+//     x10:    $unit-x10,
+//     x15:    $unit-x15,
+//     x20:    $unit-x20,
+//     x30:    $unit-x30
+// );
+
+//$unit:                       $grid-unit !default;
+//$spacing:                    $unit * 4 !default;
+
+//$base-spacing:               $spacing !default;
+
+//$margin:                     $unit * 4 !default;
+//$gutter:                     $unit * 6 !default;
+
+

@@ -1,0 +1,18 @@
+// Layout
+
+// $container-max-size:         1200px !default; // from larger
+// $container-slim-size:        900px !default;
+// $container-fluid-size:       100% !default;
+// $container-wide-size:        90% !default;
+
+$column-count:               12 !default;
+$column-gutter:              2rem !default;
+$column-size:                100%/$column-count !default;
+
+$container-xsmall-width:        400px !default; // $unit * 175
+$container-small-width:         600px !default; // $unit * 175
+$container-medium-width:        800px !default; // $unit * 175
+$container-width:              1200px !default; // $unit * 140
+$container-large-width:        1400px !default; // $unit * 175
+$container-fluid-width:          100% !default; // $unit * 175
+$container-wide-width:            90% !default; // $unit * 175

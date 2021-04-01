@@ -1,0 +1,88 @@
+// Spacing
+
+$spacer: 1rem;
+
+$spacers: (
+  0:     0,
+  1:     $spacer * 0.25,  // 4
+  2:     $spacer * 0.5,   // 8
+  3:     $spacer * 0.75,  // 12
+  4:     $spacer,         // 16
+  5:     $spacer * 1.25,  // 20
+  6:     $spacer * 1.5,   // 24
+  7:     $spacer * 2,     // 32
+  8:     $spacer * 2.5,   // 40
+  9:     $spacer * 3.5,   // 56
+  10:    $spacer * 5,     // 80
+  11:    $spacer * 7.5,   // 120
+  12:    $spacer * 15,    // 240
+);
+
+//:root {
+//  --space-xxxxs:     ; 4
+//  --space-xxxxs:     ; 8
+//  --space-xxxs:      ; 12
+//  --space-xxs:       ; 16
+//  --space-xs:        ; 20
+//  --space-sm:        ; 24
+//  --space-md:        ; 32
+//  --space-lg:        ; 40
+//  --space-xl:        ; 56
+//  --space-xxl:       ; 80
+//  --space-xxxl:      ; 120
+//  --space-xxxxl:     ; 240
+//}
+
+// $spacing-1:             $size-x_5;      //   4px
+// $spacing-2:             $size-x1;       //   8px
+// $spacing-3:             $size-x1_5;     //  12px
+// $spacing-4:             $size-x2;       //  16px
+// $spacing-5:             $size-x2_5;     //  20px
+// $spacing-6:             $size-x3;       //  24px
+// $spacing-7:             $size-x4;       //  32px
+//
+// $spacing-xs:            $size-x1;       //   8px
+// $spacing-sm:            $size-x2;       //  16px
+// $spacing-md:            $size-x3;       //  24px
+// $spacing-lg:            $size-x4;       //  32px
+// $spacing-xl:            $size-x5;       //  40px
+//
+// $spacing-small:         $size-x10;      //  80px
+// $spacing-medium:        $size-x15;      // 120px
+// $spacing-large:         $size-x20;      // 160px
+// $spacing-xlarge:        $size-x30;      // 240px
+
+// $spacers: (
+//   0:     0,
+//   1:     $spacing-1,
+//   2:     $spacing-2,
+//   3:     $spacing-3,
+//   4:     $spacing-4,
+//   5:     $spacing-5,
+//   6:     $spacing-6,
+//   7:     $spacing-7,
+//
+//   xs:            $spacing-xs,
+//   sm:            $spacing-sm,
+//   md:            $spacing-md,
+//   lg:            $spacing-lg,
+//   xl:            $spacing-xl,
+//
+//   small:         $spacing-small,
+//   medium:        $spacing-medium,
+//   large:         $spacing-large,
+//   xlarge:        $spacing-xlarge,
+// );
+
+// ELIMINAR
+//$spacing-xxs:            0.25rem;   //   4px
+//$spacing-xs:             0.5rem;    //   8px
+//$spacing-sm:             0.75rem;   //  12px
+//$spacing-md:             1rem;      //  16px
+//$spacing-lg:             1rem;      //  20px
+//$spacing-xl:             1.5rem;    //  24px
+//$spacing-xxl:            2rem;      //  32px
+
+//$spacing-small:          2.5rem;   //. 40px
+//$spacing-medium:         5rem;     //  80px
+//$spacing-large:          7.5rem;   // 120px

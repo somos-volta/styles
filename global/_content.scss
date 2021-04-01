@@ -1,0 +1,19 @@
+// Spacing
+$spacing-headings:           1rem !default;
+$spacing-paragraph:          1rem !default;
+$spacing-content:            $spacing-paragraph !default;
+$spacing-lists:              0.75rem !default;
+$spacing-lists-nested:       0.75rem !default;
+$spacing-lists-item:         0.5rem !default;
+$spacing-input:              1rem !default;
+$spacing-caption:            0.5rem !default;
+$spacing-button:             1rem !default;
+
+$spacing-divider-top:        0 !default;
+$spacing-divider-bottom:     0 !default;
+
+// Links
+$link-decoration:            none !default;
+$link-hover-decoration:      underline !default;
+//$link-color:               var-color("primary") !default;
+//$link-hover-color:         var-color("primary-dark") !default;

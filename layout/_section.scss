@@ -1,0 +1,76 @@
+@include exports("layout/section") {
+@if $include-layout {
+
+  .main {
+    padding-top: 5rem;
+  }
+
+  .section {
+    --spacing: var(--section-spacing);
+    overflow: hidden;
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+
+    &:first-of-type {
+      padding-top: calc(var(--spacing)*1.5);
+    }
+  }
+
+  .section-flush {
+    left: 0;
+    right: 0;
+    position: absolute;
+  }
+
+  .with-background {
+    position: relative;
+  }
+
+  %overlay-background {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+    z-index: -1;
+  }
+
+  .blocks,
+  .section {
+    .background,
+    .with-background:after,
+    &.with-background:after {
+      @extend %overlay-background;
+      --image: var(--background-image);
+      background-size: cover;
+      background: var(--background);
+      background-image: var(--image);
+      z-index: -2;
+      background-size: cover;
+    }
+    .with-scrim:after {
+      filter: brightness(0.8);
+    }
+    &.with-bottom-fade:before {
+      @extend %overlay-background;
+      --color: var(--fade-color);
+      background: linear-gradient(360deg , var(--color), transparent);
+      top: auto;
+      height: 60%;
+    }
+  }
+
+  .section      { --spacing: 5rem; }
+
+  .slim         { --spacing: 3rem; }
+  .huge         { --spacing: 7rem; }
+  .fat          { --spacing: 10rem; }
+
+  .small        { --spacing: 1rem; }
+  .medium       { --spacing: 2rem; }
+  .large        { --spacing: 3rem; }
+  .xlarge       { --spacing: 5rem; }
+
+}
+}

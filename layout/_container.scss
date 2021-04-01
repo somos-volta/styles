@@ -1,0 +1,31 @@
+@include exports("layout/container") {
+@if $include-layout {
+
+  %container {
+    // --container-width: null;
+    // --container-spacing: var(--grid-margin);
+
+    //position: relative;
+    width: 100%;
+    margin: 0 auto;
+    // max-width: var(--container-width);
+    // padding: 0 var(--container-spacing);
+    padding: 0 1rem;
+    padding: 0 var(--margin);
+  }
+
+  .container {
+    @extend %container;
+    max-width: $container-width;
+    //--container-width: var(--max-width);
+
+    &.xsmall { max-width: $container-xsmall-width; }
+    &.small  { max-width: $container-small-width; }
+    &.medium { max-width: $container-medium-width; }
+    &.large  { max-width: $container-large-width; }
+    &.fluid  { max-width: $container-fluid-width; }
+  }
+
+
+}
+}

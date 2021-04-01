@@ -1,0 +1,120 @@
+// https://codyhouse.co/blog/post/css-grid-layout-vs-framework-grid
+
+@include exports("layout/grid") {
+@if $include-layout {
+
+/* Grid
+-------------------------------------------------- */
+
+  // CSS GRID
+  //
+  // https://stackoverflow.com/questions/55364127/making-a-dotted-grid-with-css
+  // https://codetea.com/a-simple-technique-to-create-a-dot-pattern-or-dot-grid-background/
+  // https://html.developreference.com/article/13040926/Responsive+CSS+dot-grid+background
+
+  .bloc {
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //align-items: center;
+    --spacing: var(--margin);
+    //--image: none;
+    //display: flex;
+    //flex-direction: column;
+    //justify-content: center;
+    //align-items: center;
+    padding-top: var(--spacing);
+    padding-bottom: var(--spacing);
+    //background-image: var(--image);
+    background-color: var(--color);
+    background-size: cover;
+
+    // Comentado porque no permite centrar
+    // el texto con .text-center
+    // @include response(from phone) {
+    //   align-items: start;
+    // }
+
+    //min-height: 50vh;
+    //text-align: center;
+    &.full-height {
+      height: 100%;
+    }
+
+  }
+
+
+  @include response(from tablet) {
+
+    .grid,
+    .blocks {
+      display: flex;
+      flex-direction: row;
+      flex-wrap: wrap;
+      align-self: stretch;
+
+      //&.container,
+      .container & {
+        margin-left: calc(var(--gutter)*-1);
+        margin-right: calc(var(--gutter)*-1);
+      }
+    }
+    .blocks {
+      align-items: stretch;
+
+      .container,
+      .column {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        flex: 1;
+      }
+
+      .bloc {
+        padding: calc(var(--margin)*2);
+      }
+
+    }
+
+
+    //.block,
+
+
+    //.grid > *,
+    //.columns > * {
+    //  float: left;
+    //  padding-left: 25px;
+    //  vertical-align: top;
+    //  width: 100%;
+    //  box-sizing: border-box;
+    //}
+
+    ///* allow using the .grid class directly on .width-* elements */
+    //.grid[class*='width-'] {
+    //  padding-left: 0;
+    //  margin-left: 0;
+    //}
+
+    /* allow containers to acts a grid parents */
+    //.container.grid {
+    //  margin-left: auto;
+    //  padding-left: 0;
+    //}
+
+    //.full.columns,
+    //.full.grid {
+    //  margin-left: 0;
+    //}
+
+    //.full.columns > *,
+    //.full.grid > * {
+    //  padding-left: 0;
+    //}
+
+  }
+
+
+}
+}
+

@@ -1,0 +1,12 @@
+@include exports("layout/divider") {
+@if $include-layout {
+
+	.divider-small {
+		--spacing: .5rem;
+	}
+	.divider-large {
+		--spacing: 3rem;
+	}
+
+}
+}

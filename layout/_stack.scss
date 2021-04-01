@@ -1,0 +1,34 @@
+@include exports("layout/stack") {
+@if $include-layout {
+
+	.stack {
+		display: flex;
+		flex-direction: row;
+		align-items: start;
+	}
+
+	.panel {
+		display: flex;
+		flex: 1;
+		position: relative;
+		flex-direction: column;
+	}
+
+	//.stretch,
+	//.content {
+	//	overflow: auto;
+	//}
+
+	.page {
+		@extend .stack;
+		flex-direction: column;
+	}
+
+	@include response(from tablet) {
+		.page {
+			flex-direction: row;
+		}
+	}
+
+}
+}

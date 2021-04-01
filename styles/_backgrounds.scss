@@ -1,0 +1,10 @@
+@mixin backgrounds() {
+
+  .bg-light   { background-color: #f3f0ef; }
+  .bg-lighter { background-color: #fafafa; }
+  .bg-dark    { background-color: #2d2d2d; }
+  .bg-darker  { background-color: #1a1a1a; }
+
+}
+
+@include backgrounds();

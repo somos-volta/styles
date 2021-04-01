@@ -1,0 +1,87 @@
+$components: (
+	document,
+	divider,
+	headings,
+	paragraph,
+	abbreviation,
+	address,
+	lists,
+	quotes,
+	format,
+	links,
+	code,
+	images,
+	tables,
+	label,
+	inputs,
+	fieldset,
+	legend,
+	progress,
+	output,
+	summary,
+	template,
+	hidden
+) !default;
+
+$clear:                            transparent;
+$black:                            #000000;
+$white:                            #FFFFFF;
+
+$include-all:                      false !default;
+
+$include-base:                     $include-all !default;
+$include-layout:                   $include-all !default;
+$include-content:                  $include-all !default;
+$include-components:               $include-all !default;
+$include-classes:                  $include-all !default;
+$include-utilities:                $include-all !default;
+$include-breakepoints:             $include-all !default;
+$include-interactions:             $include-all !default;
+
+// BASE
+$include-licences:                 $include-base !default;
+$include-reset:                    $include-base !default;
+$include-scaffold:                 $include-base !default;
+$include-customize:                $include-base !default;
+$include-themes:                   $include-base !default;
+
+// LAYOUT
+$include-container-component:      $include-layout !default;
+$include-grid-component:           $include-layout !default;
+
+// CONTENT
+$include-typography-styles:        $include-content !default;
+$include-links-styles:             $include-content !default;
+$include-buttons-styles:           $include-content !default;
+$include-forms-styles:             $include-content !default;
+$include-lists-styles:             $include-content !default;
+$include-code-styles:              $include-content !default;
+$include-tables-styles:            $include-content !default;
+$include-icon-styles:              $include-content !default;
+
+$include-icomoon:                  false !default;
+$include-ionicons:                 false !default;
+
+// STYLES
+$include-typography-classes:       $include-classes !default;
+$include-links-classes:            $include-classes !default;
+$include-buttons-classes:          $include-classes !default;
+$include-forms-classes:            $include-classes !default;
+$include-lists-classes:            $include-classes !default;
+$include-code-classes:             $include-classes !default;
+$include-tables-classes:           $include-classes !default;
+$include-icon-classes:             $include-classes !default;
+
+// UTILITIES
+$include-layout-utilities:         $include-utilities !default;
+$include-misc-utilities:           $include-utilities !default;
+$include-colors-utilities:         $include-utilities !default;
+$include-spacing-utilities:        $include-utilities !default;
+$include-shadows-utilities:        $include-utilities !default;
+$include-radius-utilities:         $include-utilities !default;
+$include-typography-utilities:     $include-utilities !default;
+$include-icon-utilities:           $include-utilities !default;
+
+// COMPONENTS
+$include-navbar-classes:           $include-components !default;
+$include-menu-classes:             $include-components !default;

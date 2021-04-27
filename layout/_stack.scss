@@ -2,9 +2,23 @@
 @if $include-layout {
 
 	.stack {
-		display: flex;
-		flex-direction: row;
-		align-items: start;
+		&,
+		&.vertical {
+			display: flex;
+			flex-direction: row;
+			align-items: start;
+		}
+		&.horizontal {
+			flex-direction: columns;
+		}
+		&.center {
+			align-items: center;
+		}
+	}
+
+	.flex {
+		flex-grow: 1;
+		flex-basis: 0;
 	}
 
 	.panel {

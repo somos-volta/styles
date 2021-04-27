@@ -4,12 +4,13 @@
 
 @include exports("utilities/layout") {
 @if $include-utilities {
+@include css-comment("Positioning");
 
     .p-static,   .position-static       { position: static !important; }
     .p-relative, .position-relative     { position: relative !important; }
     .p-absolute, .position-absolute     { position: absolute !important; }
     .p-fixed,    .position-fixed        { position: fixed !important; }
-    .p-sticky,    .position-sticky       { position: sticky !important; }
+    .p-sticky,   .position-sticky       { position: sticky !important; }
 
     .fixed-top,
     .fixed-right,
@@ -42,6 +43,25 @@
         bottom: 0;
         left: 0;
     }
+
+    // Positions
+    .on-top           { @include overlay-on-top; }
+    .on-top-center    { @include overlay-on-top(center); }
+    .on-top-right     { @include overlay-on-top(right); }
+    .on-top-left      { @include overlay-on-top(left); }
+
+    .on-middle        { @include overlay-on-middle; }
+    .on-middle-center { @include overlay-on-middle(center); }
+    .on-middle-right  { @include overlay-on-middle(right); }
+    .on-middle-left   { @include overlay-on-middle(left); }
+
+    .on-bottom        { @include overlay-on-bottom; }
+    .on-bottom-center { @include overlay-on-bottom(center); }
+    .on-bottom-right  { @include overlay-on-bottom(right); }
+    .on-bottom-left   { @include overlay-on-bottom(left); }
+
+    .on-left          { @include overlay-on-left; }
+    .on-right         { @include overlay-on-right; }
 
 }
 }

@@ -1,11 +1,13 @@
 $shape-rect:             0px !default;
+$shape-rounded:          .25rem !default;
+$shape-round:            10rem !default;
+$shape-circle:           50% !default;
+
 $shape-rounded-xs:       .25rem !default;
 $shape-rounded-sm:       .5rem !default;
 $shape-rounded-md:       1rem !default;
 $shape-rounded-lg:       2rem !default;
 $shape-rounded-xl:       3rem !default;
-$shape-rounded:          10rem !default;
-$shape-circle:           50% !default;
 
 $border-size-thin:       1px !default;
 $border-size-medium:     2px !default;
@@ -15,3 +17,19 @@ $border-style-dotted:    dotted !default;
 $border-style-dashed:    dashed !default;
 $border-style-solid:     solid !default;
 $border-style-double:    double !default;
+
+$base-divider-width:     $border-size-thin !default;
+$base-border-width:      $border-size-medium !default;
+
+:root {
+	--shape-rect:        #{$shape-rect};
+	--shape-rounded:     #{$shape-rounded};
+	--shape-round:       #{$shape-round};
+	--shape-circle:      #{$shape-circle};
+
+	--shape-rounded-xs:  #{$shape-rounded-xs};
+	--shape-rounded-sm:  #{$shape-rounded-sm};
+	--shape-rounded-md:  #{$shape-rounded-md};
+	--shape-rounded-lg:  #{$shape-rounded-lg};
+	--shape-rounded-xl:  #{$shape-rounded-xl};
+}

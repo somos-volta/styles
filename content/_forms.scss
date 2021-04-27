@@ -12,12 +12,17 @@
   // input[type="password"]
 
   input, textarea, select {
-    --input-border: var(--base-border);
+    --input-background: var(--input-color);
+    --input-border: var(--base-input-border);
+    --input-shape: var(--base-input-shape);
+  }
 
+  input, textarea, select {
     width: 100%;
-    background-color: var(--input-color);
+    background-color: var(--input-background);
     border: var(--input-border);
     border-color: var(--border-color);
+    border-radius: var(--input-shape);
     padding: .5em 1em;
   }
 
@@ -44,7 +49,7 @@
   }
 
   legend {
-    color: #999;
+    color: var(--secondary-color);
   }
 
   fieldset {
@@ -73,13 +78,13 @@
   input:disabled,
   select:disabled,
   textarea:disabled {
-    color: #999;
+    color: var(--secondary-color);
     background-color: #f6f6f6;
   }
 
   select {
     //line-height: 1;
-    border-radius: 0; /* chrome osx */
+    //border-radius: 0; /* chrome osx */
     padding-right: 2em !important;
     background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='12' fill='%23aaaaaa'><polygon points='12,4 24,4 18,10'/></svg>");
     background-repeat: no-repeat;

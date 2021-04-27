@@ -23,29 +23,29 @@ $components: (
 	hidden
 ) !default;
 
-$clear:                            transparent;
-$black:                            #000000;
-$white:                            #FFFFFF;
+$clear:                            transparent !default;
+$black:                            #000000 !default;
+$white:                            #FFFFFF !default;
 
 $include-all:                      false !default;
 
+$include-reset:                    $include-all !default;
 $include-base:                     $include-all !default;
 $include-layout:                   $include-all !default;
 $include-content:                  $include-all !default;
-$include-components:               $include-all !default;
-$include-classes:                  $include-all !default;
-$include-utilities:                $include-all !default;
-$include-breakepoints:             $include-all !default;
+$include-classes:                  $include-all !default; // @import "styles"
 $include-interactions:             $include-all !default;
+$include-components:               $include-all !default;
+$include-utilities:                $include-all !default;
 
 // BASE
 $include-licences:                 $include-base !default;
-$include-reset:                    $include-base !default;
 $include-scaffold:                 $include-base !default;
 $include-customize:                $include-base !default;
 $include-themes:                   $include-base !default;
 
 // LAYOUT
+$include-breakepoints:             $include-layout !default;
 $include-container-component:      $include-layout !default;
 $include-grid-component:           $include-layout !default;
 
@@ -59,8 +59,8 @@ $include-code-styles:              $include-content !default;
 $include-tables-styles:            $include-content !default;
 $include-icon-styles:              $include-content !default;
 
-$include-icomoon:                  false !default;
-$include-ionicons:                 false !default;
+$include-icons-feather:            false !default;
+$include-icons-ionicons:           false !default;
 
 // STYLES
 $include-typography-classes:       $include-classes !default;

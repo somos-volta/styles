@@ -1,4 +1,0 @@
-@mixin alpha-attr($attribute, $alpha-color, $background: white) {
-  #{$attribute}: solid($alpha-color, $background);
-  #{$attribute}: $alpha-color;
-}

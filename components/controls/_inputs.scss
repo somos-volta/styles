@@ -28,8 +28,8 @@
 		--input-text-color:  var(--text-color);
 		--input-border-color:  var(--border-color);
 		--input-fill-color: transparent;
-    --input-border: var(--base-border);
-		--input-shape: 0px;
+		--input-border: var(--base-border);
+		--input-shape: var(--input-shape);
 
 		border: var(--input-border);
 		border-color: var(--input-border-color);

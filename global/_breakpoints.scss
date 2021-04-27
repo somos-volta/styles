@@ -28,6 +28,8 @@ $breakpoints: (
 ) !default;
 
 $devices: (
+  mobile:           md,
+
   phone:            xs,
   tablet:           sm,
   laptop:           md,

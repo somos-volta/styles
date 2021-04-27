@@ -1,4 +1,4 @@
-// @each $color, $value in $colors {
+	// @each $color, $value in $colors {
 // 	--#{$color}: #{$value};
 // }
 
@@ -77,14 +77,14 @@
 		--middle-height:          #{$half-size-vh};
 
 		/* Borders */
-		--thin:                   #{$border-size-thin};
-		--medium:                 #{$border-size-medium};
-		--thick:                  #{$border-size-thick};
+		--border-thin:                   #{$border-size-thin};
+		--border-medium:                 #{$border-size-medium};
+		--border-thick:                  #{$border-size-thick};
 
-		--dotted:                 #{$border-style-dotted};
-		--dashed:                 #{$border-style-dashed};
-		--solid:                  #{$border-style-solid};
-		--double:                 #{$border-style-double};
+		--border-dotted:                 #{$border-style-dotted};
+		--border-dashed:                 #{$border-style-dashed};
+		--border-solid:             	     #{$border-style-solid};
+		--border-double:                 #{$border-style-double};
 
 		/* Font weights */
 		--light:                  #{$font-weight-light};

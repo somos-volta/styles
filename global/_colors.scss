@@ -1,4 +1,4 @@
-  //
+//
 // COLORS
 //
 // https://codyhouse.co/blog/post/how-to-combine-sass-color-functions-and-css-variables
@@ -8,13 +8,21 @@
 // https://www.smashingmagazine.com/2019/07/css-custom-properties-cascade/
 //
 
-  $colors: () !default;
-
-  $colors: map-merge((
+  $colors: (
     transparent:          transparent,
     current:              currentColor,
     black:                #000000,
     white:                #FFFFFF,
+  ) !default;
+
+  :root {
+    --transparent:        #{color(transparent)};
+    --current:            #{color(currentColor)};
+    --black:              #{color(black)};
+    --white:              #{color(white)};
+  }
+
+  $pallete: (
     blue:                 #007bff,
     indigo:               #6610f2,
     purple:               #6f42c1,
@@ -25,16 +33,28 @@
     green:                #28a745,
     teal:                 #20c997,
     cyan:                 #17a2b8,
-  ),$colors);
+  ) !default;
+
+  $brandcolors: (
+    facebook:  (#1877f2),
+    instagram: (#405DE6),
+    twitter:   (#1da1f2),
+    linkedin:  (#0a66c2),
+    youtube:   (#ff0000),
+    whatsapp:  (#06d755)
+  );
+
+  $colors: map-merge($pallete,$colors) !global;
 
   @function add-color($_list) {
     @return map-merge($_list,$colors);
   }
 
   @mixin add-color($_list) {
-    $colors: map-merge($_list,$colors);
+    $colors: add-color($_list);
   }
 
   @function color($_name,$_palette:$colors) {
     @return map-get($_palette,$_name);
   }
+

@@ -1,0 +1,133 @@
+$hero-background-color: black;
+$hero-default-height:   auto;
+$hero-full-height:      100%;
+$hero-large-height:     75%;
+$hero-middle-height:    50%;
+$hero-small-height:     25%;
+$hero-text-align:       left;
+
+// [1] Es para no mostrar el sobrande de .hero-line xD (corregire esto)
+@include exports("component/hero") {
+@if $include-components {
+@include css-comment("Hero");
+
+  .hero {
+
+    & {
+      overflow: hidden; // [1]
+      position: relative;
+      display: table;
+      table-layout: fixed;
+      width: 100%;
+      height: $hero-default-height;
+      text-align: $hero-text-align;
+      background-color: $hero-background-color;
+      // padding-top: $navbar-height;
+    }
+
+    &-full   { height: $hero-full-height; }
+    &-large  { height: $hero-large-height; }
+    &-medium,
+    &-middle { height: $hero-middle-height; }
+    &-small  { height: $hero-small-height; }
+
+    &:after {
+      @include stretch(-50px);
+      content: "";
+      z-index: 0;
+      background-position: center;
+      background-size: cover;
+    }
+
+    &-blured:after {
+      filter: blur(50px);
+    }
+
+    &-overlay:before {
+      @extend .overlay !optional;
+      display: block;
+      content: "";
+      z-index: 1;
+    }
+    &-shupercool:before  {
+      @include stretch(40px);
+      display: block;
+      content: "";
+      z-index: 1;
+      background-color: rgba(#000,.8);
+    }
+
+    &-content {
+      display: table-cell;
+      vertical-align: middle;
+      position: relative;
+      z-index: 10;
+      width: 100%;
+    }
+
+    &-line {
+      position: absolute;
+      top: -10px;
+      right: -20%;
+      width: 1px;
+      height: 3000px;
+      background-color: white;
+      transform: rotate(45deg);
+      transform-origin: 0 0;
+      opacity: .6;
+      z-index: 3;
+      pointer-events: none;
+      user-select: none;
+    }
+
+    &-canvas {
+      position: absolute;
+      z-index: -1;
+      top: 0;
+      left: 0;
+    }
+
+  }
+
+
+  .hero {
+
+    h1 {
+      font-size: 34px;
+      margin-top: 0;
+    }
+    h2 {
+      font-size: 24px;
+      font-weight: $font-weight-light;
+    }
+    h1, h2 {
+      margin-bottom: 32px; //$gutter-md;
+    }
+    .logo {
+      margin-bottom: 32px; //$gutter-md;
+    }
+    @include response(from desktop) {
+      h1 {
+        font-size: 54px;
+      }
+      h2 {
+      }
+    }
+
+  }
+
+  .scroll-to-view-more {
+    & {
+      position: absolute;
+      bottom: 32px; //$gutter;
+      left: 50%;
+      margin-left: -20px;
+    }
+    .icon {
+      font-size: 50px;
+    }
+  }
+
+}
+}
+

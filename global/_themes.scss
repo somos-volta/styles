@@ -16,9 +16,15 @@
 // https://sparanoid.com/note/css-variables-guide/
 
 // Themes
+//
+// Color System
+// Theme shades
+// Theme colors
+
+
   $default-theme:          light !default;
 
-// 2. System
+// 2. Color System
   $content-color:          color(black) !default;
   $inverse-color:          color(white) !default;
   $surface-color:          color(white) !default;
@@ -34,7 +40,7 @@
 
   $dark-content-color:     color(white) !default;
   $dark-inverse-color:     color(black) !default;
-  $dark-surface-color:     color(black) !default;
+  $dark-surface-color:     tint(color(black), 8%) !default;
   $dark-background-color:  color(black) !default;
   $dark-backdrop-color:    rgba(18, 25, 24, 0.2) !default;
   $dark-selection-color:   color(blue) !default;
@@ -61,7 +67,7 @@
     icon-disabled:        .3,
     selection:            .1, // Text selection shade
     highlight:            .2, // Text highligh shade
-    input:                .05,
+    input:                 0,
     border:               .2,
     divider:              .1,
   ) !default;
@@ -76,7 +82,7 @@
     icon-disabled:        .4,
     selection:            .1, // Text selection shade
     highlight:            .2, // Text highligh shade
-    input:                .05,
+    input:                 0,
     border:               .3,
     divider:              .2,
   ) !default;
@@ -116,6 +122,12 @@
     danger-dark:           shade($danger-color,  2%),
 
     surface:               $surface-color,
+    surface-lower:         shade($surface-color, 5%),
+    surface-low:           shade($surface-color, 12%),
+    surface-medium:        shade($surface-color, 50%),
+    surface-high:          shade($surface-color, 80%),
+    surface-higher:        shade($surface-color, 90%),
+
     translucent:           rgba($surface-color,.8),
     background:            $background-color,
     selection:             rgba($selection-color, theme-shade(selection)),
@@ -151,6 +163,12 @@
     danger-dark:           shade($dark-danger-color,  2%),
 
     surface:               $dark-surface-color,
+    surface-lower:         tint($dark-surface-color, 5%),
+    surface-low:           tint($dark-surface-color, 10%),
+    surface-medium:        tint($dark-surface-color, 50%),
+    surface-high:          tint($dark-surface-color, 80%),
+    surface-higher:        tint($dark-surface-color, 90%),
+
     translucent:           rgba($dark-surface-color,.9),
     background:            $dark-background-color,
     selection:             rgba($dark-selection-color, theme-shade(selection, dark)),

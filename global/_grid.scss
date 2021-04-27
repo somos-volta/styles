@@ -6,10 +6,12 @@ $baseline-factor:            .5 !default;
 
 $grid-size:                  .5rem !default;
 $grid-half:                  $grid-size / 2 !default;
-$grid-margin:                $grid-size * 4 !default;
+$grid-margin:                $grid-size * 2 !default;
 $grid-gutter:                $grid-size * 2 !default;
 $grid-spacing:               $grid-size * 2 !default;;
 $grid-baseline:              $grid-size * $baseline-factor;
+
+$grid-margin-large:          $grid-margin * 1.5 !default;
 
 // System
 

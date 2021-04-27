@@ -2,14 +2,21 @@
 @if $include-components {
 @include css-comment("Dropdowns");
 
+  :root {
+    --dropdown-size: 320px;
+    --dropdown-spacing: 1rem;
+    --dropdown-background: var(--surface-color);
+    --dropdown-shadow: $shadow-elevation-2;
+  }
+
   %dropdown-container {
     z-index: 100;
     position: absolute;
     left: 0;
     margin: 0;
     overflow-y: auto;
-    background: #fafafa;
-    box-shadow: $shadow-elevation-2;
+    background: var(--dropdown-background);
+    box-shadow: var(--dropdown-shadow);
     //border-radius: 5px;
     //margin-top: .5rem; // Impide que el dropdown se mantenga abiarto
 
@@ -42,9 +49,9 @@
       opacity: 1;
     }
 
-    .stack .bloc {
-      --spacing: 2rem;
-    }
+    //.stack .bloc {
+    //  --spacing: 2rem;
+    //}
 
     &.mega-menu {
       position: static;
@@ -81,19 +88,20 @@
   }
 
   .dropdown-menu {
-    --size: 240px;
+    --dropdown-size: 200px;
+    --dropdown-spacing: 1rem;
     @extend %dropdown-container;
     display: block;
-    width: var(--size);
-    padding: 1rem;
+    width: var(--dropdown-size);
+    padding: var(--dropdown-spacing);
   }
 
   .dropdown-panel {
     @extend %dropdown-container;
-    width: 480px;
+    --dropdown-size: 480px;
 
     &.large {
-      width: 880px;
+      --dropdown-size: 880px;
     }
 
     .dropdown.mega-menu & {

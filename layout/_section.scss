@@ -2,7 +2,8 @@
 @if $include-layout {
 
   .main {
-    padding-top: 5rem;
+    --spacing: var(--main-top-spacing);
+    padding-top: var(--spacing);
   }
 
   .section {
@@ -11,9 +12,9 @@
     padding-top: var(--spacing);
     padding-bottom: var(--spacing);
 
-    &:first-of-type {
-      padding-top: calc(var(--spacing)*1.5);
-    }
+    //&:first-of-type {
+    //  padding-top: calc(var(--spacing)*1.5);
+    //}
   }
 
   .section-flush {
@@ -49,8 +50,8 @@
       z-index: -2;
       background-size: cover;
     }
-    .with-scrim:after {
-      filter: brightness(0.8);
+    &.with-scrim:after {
+      filter: brightness(0.7);
     }
     &.with-bottom-fade:before {
       @extend %overlay-background;

@@ -2,17 +2,17 @@
 @include css-section("Utilities");
 }
 
-@import "utilities/align";
-@import "utilities/positions";
-@import "utilities/display";
-@import "utilities/visibility";
-@import "utilities/float";
+@import "utilities/accesibility";
 @import "utilities/fonts";
 @import "utilities/text";
-@import "utilities/size";
+@import "utilities/display";
+@import "utilities/positions";
+@import "utilities/align";
+@import "utilities/spacing";
+@import "utilities/sizes";
 @import "utilities/shapes";
 @import "utilities/shadows";
-@import "utilities/spacing";
+
 
 //       layout
 //       shape

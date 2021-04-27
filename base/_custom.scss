@@ -1,33 +1,3 @@
-@mixin theme-mode($name) {
-  $mode: $name;
-
-  [data-mode="#{$name}"], .mode-#{$name}, .#{$mode} {
-    /* Base colors */
-    --background-color:        #{theme-color(background, $mode)};
-    --surface-color:           #{theme-color(surface, $mode)};
-    --translucent-color:       #{theme-color(translucent, $mode)};
-
-    --primary-color:           #{theme-color(accent, $mode)};
-    --text-color:              #{theme-color(high-emphasis, $mode)};
-    --inverse-color:           #{theme-color(inverse, $mode)};
-    --secondary-color:         #{theme-color(medium-emphasis, $mode)};
-    --disabled-color:          #{theme-color(disabled, $mode)};
-    --divider-color:           #{theme-color(divider, $mode)};
-    --input-color:             #{theme-color(input, $mode)};
-    --border-color:            #{theme-color(border, $mode)};
-    --link-color:              #{theme-color(accent, $mode)};
-    --link-hover-color:        #{theme-color(accent-dark, $mode)};
-    --link-text-color:         #{theme-color(medium-emphasis, $mode)};
-
-    --info-color:              #{theme-color(info, $mode)};
-    --success-color:           #{theme-color(success, $mode)};
-    --warning-color:           #{theme-color(warning, $mode)};
-    --danger-color:            #{theme-color(danger, $mode)};
-
-    color: var(--text-color);
-  }
-}
-
 @mixin custom {
   :root {
     /* Base font */
@@ -35,25 +5,42 @@
     --font-size:               #{$font-size-base};
     --font-weight:             #{$font-weight-base};
     --line-height:             #{$line-height-base};
-    /* Grid */
-    --margin:                  #{1.5rem};
-    --gutter:                  #{1rem};
+
     /* Content */
-    --line-spacing:            #{1rem};
-    /* Container */
-    --max-width:               #{$container-width};
-    --fluid-width:             #{$container-fluid-width};
-    /* Section */
+    --line-spacing:            #{$grid-spacing};
+    --half-spacing:            #{calc(var(--line-spacing)*.5)};
+
+    /* Grid */
+    --margin:                  #{$grid-margin};
+    --gutter:                  #{$grid-gutter};
+
+    /* Layout */
+    --main-top-spacing:        #{5rem};
+    --main-bottom-spacing:     #{5rem};
+
     --section-spacing:         #{5rem};
     --section-title:           #{5rem};
-    /* Navigation */
+
+    --container-max-width:     #{$container-width};
+    --container-fluid-width:   #{$container-fluid-width};
+
+    /* Components */
     --navbar-background:       #{var(--surface-color)};
     --navbar-spacing:          #{1rem 0};
     --main-section-height:     #{90vh};
-    /* Elements */
     --brand-max-height:        #{40px};
-    --base-border:             #{2px solid};
+
+    /* Elements */
+    --divider-width:           #{$base-divider-width};
+    --border-width:            #{$base-border-width};
+
+    /* Controls */
+    --base-border:             #{var(--border-width) solid};
     --button-radius:           #{0};
+
+    --base-input-border:       #{var(--border-width) solid};
+    --base-input-shape:        #{var(--shape-rounded)};
+
     /* Custom colors */
     --notification-color:      #{$danger-color};
     --discount-color:          #{var(--notification-color)};
@@ -71,13 +58,63 @@
     --spacing-input:           #{var(--line-spacing)};
     --spacing-caption:         #{calc(var(--line-spacing) * .5)};
     --spacing-button:          #{var(--line-spacing)};
+
+    --facebook-color:          #{brandcolor(facebook)};
+    --twitter-color:           #{brandcolor(twitter)};
+    --linkedin-color:          #{brandcolor(linkedin)};
+    --youtube-color:           #{brandcolor(youtube)};
+    --instagram-color:         #{brandcolor(instagram)};
+
   }
   @include response(from phone) {
     :root {
-      --margin:              #{2rem};
+      --margin:                #{$grid-margin-large};
     }
   }
 
+}
+
+//  --color-contrast-lower:   hsl(0, 0%, 95%);
+//  --color-contrast-low:     hsl(240, 1%, 83%);
+//  --color-contrast-medium:  hsl(240, 1%, 48%);
+//  --color-contrast-high:    hsl(240, 4%, 20%);
+//  --color-contrast-higher:  hsl(240, 8%, 12%);
+
+@mixin theme-mode($name) {
+  $mode: $name;
+
+  [data-mode="#{$name}"], .mode-#{$name}, .#{$mode} {
+    /* Base colors */
+    --background-color:        #{theme-color(background, $mode)};
+
+    --surface-color:           #{theme-color(surface, $mode)};
+    --surface-lower-color:     #{theme-color(surface-lower, $mode)};
+    --surface-low-color:       #{theme-color(surface-low, $mode)};
+    --surface-medium-color:    #{theme-color(surface-medium, $mode)};
+    --surface-high-color:      #{theme-color(surface-high, $mode)};
+    --surface-higher-color:    #{theme-color(surface-higher, $mode)};
+
+    --primary-color:           #{theme-color(accent, $mode)};
+    --text-color:              #{theme-color(high-emphasis, $mode)};
+    --inverse-color:           #{theme-color(inverse, $mode)};
+    --secondary-color:         #{theme-color(medium-emphasis, $mode)};
+    --disabled-color:          #{theme-color(disabled, $mode)};
+    --divider-color:           #{theme-color(divider, $mode)};
+    --input-color:             #{theme-color(input, $mode)};
+    --border-color:            #{theme-color(border, $mode)};
+    --link-color:              #{theme-color(accent, $mode)};
+    --link-hover-color:        #{theme-color(primary-dark, $mode)};
+    --link-text-color:         #{theme-color(medium-emphasis, $mode)};
+
+    --info-color:              #{theme-color(info, $mode)};
+    --success-color:           #{theme-color(success, $mode)};
+    --warning-color:           #{theme-color(warning, $mode)};
+    --danger-color:            #{theme-color(danger, $mode)};
+
+    --translucent-color:       #{theme-color(translucent, $mode)};
+
+    color: var(--text-color);
+  }
 }
 
 @include exports("base/customize") {

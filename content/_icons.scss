@@ -1,5 +1,5 @@
 @mixin icon($icon) {
-  @extend %icon;
+  //@extend %icon;
   &:before { content: $icon; }
 }
 
@@ -24,10 +24,18 @@
     /* Better Font Rendering */
     -webkit-font-smoothing: antialiased;
     -moz-osx-font-smoothing: grayscale;
+
   }
 
-  i, .ico, .icon, .icons {
+  i,.ico, .icon, .icons {
     @extend %icon;
+    color: currentColor;
+  }
+
+  svg.ico, svg.icon, svg.icons {
+    g, path {
+      fill: currentColor;
+    }
   }
 
   // Icon sizes

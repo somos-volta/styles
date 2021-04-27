@@ -1,6 +1,16 @@
 @include exports("component/avatar") {
 @if $include-components {
+@include css-comment("Avatar");
 
+.avatar {
+	& {
+		border-radius: 100px;
+		overflow: hidden;
+	}
+	img {
+		width: 2.5rem;
+	}
+}
 
 }
 }

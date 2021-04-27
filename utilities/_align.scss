@@ -1,5 +1,8 @@
 @include exports("utilities/align") {
 @if $include-utilities {
+@include css-comment("Alignment");
+
+  .m-auto { margin-left: auto; margin-right: auto;}
 
   .align-baseline       { vertical-align: baseline !important; } // Browser default
   .align-top            { vertical-align: top !important; }
@@ -16,6 +19,14 @@
   .align-items-baseline { align-items: baseline !important; }
   .align-items-stretch  { align-items: stretch !important; }
 
+  .align-self-top,
+  .align-self-start    { align-self: flex-start !important; }
+  .align-self-bottom,
+  .align-self-end      { align-self: flex-end !important; }
+  .align-self-center   { align-self: center !important; }
+  .align-self-baseline { align-self: baseline !important; }
+  .align-self-stretch  { align-self: stretch !important; }
+
   .content-start        { justify-content: flex-start; }
   .content-center       { justify-content: center; }
   .content-end          { justify-content: flex-end; }
@@ -24,6 +35,10 @@
   .space-between        { justify-content: space-between; }
   .space-evenly         { justify-content: space-evenly; }
 
-  .m-auto { margin-left: auto; margin-right: auto;}
+  .left        { float: left !important; clear: left; }
+  .right       { float: right !important; clear: right; }
+  .center      { float: none; margin-left: auto; margin-right: auto; }
+  .clear       { clear: both; }
+
 }
 }

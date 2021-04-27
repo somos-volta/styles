@@ -1,5 +1,5 @@
-@include exports("components/icons") {
-@if $include-ionicons {
+@include exports("components/icons/ionicons") {
+@if $include-icons-ionicons {
 @include css-comment("Icons");
 
   :root {

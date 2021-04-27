@@ -8,11 +8,13 @@
 @include exports("layout/columns") {
 @if $include-layout {
 
+  :root {
+    --column-gutter: calc(var(--gutter)/2);
+  }
+
   .columns {
     display: flex;
-    flex-direction: row;
     flex-wrap: wrap;
-    align-self: stretch;
 
     &.inverse-order {
       flex-direction: row-reverse;
@@ -20,17 +22,18 @@
 
     //&.container,
     .container & {
-      margin-left: calc(var(--gutter)*-1);
-      margin-right: calc(var(--gutter)*-1);
+      margin-left: calc(var(--column-gutter)*-1);
+      margin-right: calc(var(--column-gutter)*-1);
     }
   }
 
   .column {
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
-    padding-left: var(--gutter);
-    padding-right: var(--gutter);
+    //flex: 1 0 0%;
+    padding-left: var(--column-gutter);
+    padding-right: var(--column-gutter);
+    //display: flex;
+    //flex-direction: column;
+    //align-items: flex-start;
     //width: 100%;
   }
 

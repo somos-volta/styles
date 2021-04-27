@@ -1,0 +1,28 @@
+:root {
+  --border-thin:      #{$border-size-thin};
+  --border-medium:    #{$border-size-medium};
+  --border-thick:     #{$border-size-thick};
+
+  --border-dotted:    #{$border-style-dotted};
+  --border-dashed:    #{$border-style-dashed};
+  --border-solid:     #{$border-style-solid};
+  --border-double:    #{$border-style-double};
+}
+
+.border {
+  & {
+    --border-width: var(--border-thin);
+    --border-style: var(--border-solid);
+    --border-color: var(--border-color);
+    border: var(--border-width) var(--border-style) var(--border-color);
+  }
+
+  &.thin    { --border-width: var(--border-thin); }
+  &.medium  { --border-width: var(--border-medium); }
+  &.thick   { --border-width: var(--border-thick); }
+
+  &.dotted  { --border-style: var(--border-dotted); }
+  &.dashed  { --border-style: var(--border-dashed); }
+  &.solid   { --border-style: var(--border-solid); }
+  &.double  { --border-style: var(--border-double); }
+}

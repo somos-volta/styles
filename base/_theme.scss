@@ -26,20 +26,34 @@
   //Backgronds
   body,
   .background               { background-color: var(--background-color); }
-  // .surface                  { background: var(--surface-color); }
-  // .background               { background: var(--background-color); }
-  // ::selection               { background: var(--selection-color); }
-  // mark, .highlight          { background: var(--highlight-color); }
+  .surface                  { background-color: var(--surface-color); }
+
+  .bg-lower-contrast        { background-color: var(--surface-lower-color); }
+  .bg-low-contrast          { background-color: var(--surface-low-color); }
+  .bg-medium-contrast       { background-color: var(--surface-medium-color); }
+  .bg-high-contrast         { background-color: var(--surface-high-color); }
+  .bg-higher-contrast       { background-color: var(--surface-higher-color); }
+
+  //::selection               { background-color: var(--selection-color); }
+  //mark, .highlight          { background-color: var(--highlight-color); }
 
   // Text
   body                      { color: var(--text-color); }
-  .text-inverse             { color: var(--inverse-color); }
-  .text-secondary           { color: var(--secondary-color); }
-  .text-hint,
-  .text-disabled            { color: var(--disabled-color); }
   hr, .divider              { color: var(--divider-color); }
   a                         { color: var(--link-color); }
   a:hover                   { color: var(--link-hover-color); }
+
+  .text-default             { color: var(--text-color); }
+  .text-secondary           { color: var(--secondary-color); }
+  .text-hint,
+  .text-disabled            { color: var(--disabled-color); }
+  .text-inverse             { color: var(--inverse-color); }
+
+  .color-default            { color: var(--text-color); }
+  .color-secondary          { color: var(--secondary-color); }
+  .color-hint,
+  .color-disabled           { color: var(--disabled-color); }
+  .color-inverse            { color: var(--inverse-color); }
 
   // Service
   .text-primary             { color: var(--primary-color); }
@@ -47,6 +61,19 @@
   .text-success             { color: var(--success-color); }
   .text-warning             { color: var(--warning-color); }
   .text-danger              { color: var(--danger-color); }
+
+  .color-primary            { color: var(--primary-color); }
+  .color-info               { color: var(--info-color); }
+  .color-success            { color: var(--success-color); }
+  .color-warning            { color: var(--warning-color); }
+  .color-danger             { color: var(--danger-color); }
+
+  .color-facebook           { color: var(--facebook-color); }
+  .color-twitter            { color: var(--twitter-color); }
+  .color-linkedin           { color: var(--linkedin-color); }
+  .color-youtube            { color: var(--youtube-color); }
+  .color-instagram          { color: var(--instagram-color); }
+  .color-whatsapp           { color: var(--instagram-color); }
 
   // Service
   // .light {

@@ -1,5 +1,38 @@
 @include exports("utilities/shapes") {
 @if $include-utilities {
+@include css-comment("Shapes");
+
+  %shape {
+    --box-shape: var(--shape-rect);
+    border-radius: var(--box-shape);
+  }
+
+  .shape,
+  .rect,
+  .rounded,
+  .round,
+  .circle {
+    @extend %shape;
+  }
+
+  .rect        { --box-shape: var(--shape-rect); }
+  .rounded     { --box-shape: var(--shape-rounded); }
+  .round       { --box-shape: var(--shape-round); }
+  .circle      { --box-shape: var(--shape-circle); }
+
+  .rounded-xs,
+  .rounded-sm,
+  .rounded-md,
+  .rounded-lg,
+  .rounded-xl {
+    @extend .rounded;
+  }
+
+  .rounded-xs  { --box-shape: var(--shape-rounded-xs); }
+  .rounded-sm  { --box-shape: var(--shape-rounded-sm); }
+  .rounded-md  { --box-shape: var(--shape-rounded-md); }
+  .rounded-lg  { --box-shape: var(--shape-rounded-lg); }
+  .rounded-xl  { --box-shape: var(--shape-rounded-xl); }
 
   .radius-right {
     border-top-left-radius: 0px;

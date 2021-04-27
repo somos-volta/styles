@@ -1,46 +1,87 @@
+@mixin set-displays($breakpoint:"") {
+  .#{$breakpoint}normal        { display: inherit !important; }
+  .#{$breakpoint}block         { display: block !important; }
+  .#{$breakpoint}inline-block  { display: inline-block !important; }
+  .#{$breakpoint}inline        { display: inline !important; }
+  //.flex                      { display: flex; }
+  //.inline-flex               { display: inline-flex; }
+  //.table                     { display: table; }
+  //.inline-table              { display: inline-table; }
+  //.table-caption             { display: table-caption; }
+  //.table-cell                { display: table-cell; }
+  //.table-column              { display: table-column; }
+  //.table-column-group        { display: table-column-group; }
+  //.table-footer-group        { display: table-footer-group; }
+  //.table-header-group        { display: table-header-group; }
+  //.table-row-group           { display: table-row-group; }
+  //.table-row                 { display: table-row; }
+  //.flow-root                 { display: flow-root; }
+  //.grid                      { display: grid; }
+  //.inline-grid               { display: inline-grid; }
+  //.contents                  { display: contents; }
+  //.list-item                 { display: list-item; }
+  .#{$breakpoint}hidden        { display: none !important; }
+}
+@mixin set-visibility($breakpoint:"") {
+  .#{$breakpoint}nowrap        { white-space: nowrap !important; }
+  .#{$breakpoint}visible       { visibility: visible !important; }
+  .#{$breakpoint}invisible     { visibility: hidden !important; }
+}
+
 @include exports("utilities/display") {
 @if $include-utilities {
+@include css-comment("Visibility");
+
+  @include set-displays;
+  @include set-visibility;
+
+  @each $name, $size in $breakpoints {
+    @include response(from $name) {
+      @include set-displays("#{$name}\\:");
+      @include set-visibility("#{$name}\\:");
+    }
+  }
+
+  //.normal            { display: inherit !important; }
+  //.hidden            { display: none !important; }
+  //.block             { display: block !important; }
+  //.inline            { display: inline !important; *display: inline; /*IE 6/7*/ }
+  //.inblock           { display: inline-block !important; *display: inline; /*IE 6/7*/ }
 
   // Phone
-  .hidden-phone        { display: none !important; }
-  .hidden-tablet       { display: inherit !important; }
-  .hidden-desktop      { display: inherit !important; }
-  .visible-desktop     { display: none !important; }
-  .visible-tablet      { display: none !important; }
-  .visible-phone       { display: inherit !important; }
+  // .hidden-phone        { display: none !important; }
+  // .hidden-tablet       { display: inherit !important; }
+  // .hidden-desktop      { display: inherit !important; }
+  // .visible-desktop     { display: none !important; }
+  // .visible-tablet      { display: none !important; }
+  // .visible-phone       { display: inherit !important; }
 
   // Tablet
-  @include response(from tablet) {
-    .hidden-phone      { display: inherit !important; }
-    .hidden-tablet     { display: none !important; }
-    .hidden-desktop    { display: inherit !important; }
-    .visible-desktop   { display: none !important; }
-    .visible-tablet    { display: inherit !important; }
-    .visible-phone     { display: none !important; }
-  }
+  // @include response(from tablet) {
+  //   .hidden-phone      { display: inherit !important; }
+  //   .hidden-tablet     { display: none !important; }
+  //   .hidden-desktop    { display: inherit !important; }
+  //   .visible-desktop   { display: none !important; }
+  //   .visible-tablet    { display: inherit !important; }
+  //   .visible-phone     { display: none !important; }
+  // }
 
   // Desktop
-  @include response(from desktop) {
-    .hidden-phone      { display: inherit !important; }
-    .hidden-tablet     { display: inherit !important; }
-    .hidden-desktop    { display: none !important; }
-    .visible-desktop   { display: inherit !important; }
-    .visible-tablet    { display: none !important; }
-    .visible-phone     { display: none !important; }
-  }
+  // @include response(from laptop) {
+  //   .hidden-phone      { display: inherit !important; }
+  //   .hidden-tablet     { display: inherit !important; }
+  //   .hidden-desktop    { display: none !important; }
+  //   .visible-desktop   { display: inherit !important; }
+  //   .visible-tablet    { display: none !important; }
+  //   .visible-phone     { display: none !important; }
+  // }
 
-  .visible-print     { display: none !important; }
+  // .visible-print     { display: none !important; }
 
-  @media print {
-    .visible-print   { display: inherit !important; }
-    .hidden-print    { display: none !important; }
-  }
-
-  .normal            { display: inherit !important; }
-  .hidden            { display: none !important; }
-  .block             { display: block !important; }
-  .inline            { display: inline-block !important; *display: inline; /*IE 6/7*/ }
-  .nowrap            { white-space: nowrap; }
+  // @media print {
+  //   .visible-print   { display: inherit !important; }
+  //   .hidden-print    { display: none !important; }
+  // }
 
 }
 }

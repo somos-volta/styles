@@ -12,6 +12,8 @@
 @import "reset/quotes";
 @import "reset/links";
 @import "reset/code";
+
+// Objects
 @import "reset/images";
 @import "reset/tables";
 
@@ -47,6 +49,8 @@
 		@include reset-format;
 		@include reset-links;
 		@include reset-code;
+
+		// Objects
 		@include reset-images;
 		@include reset-tables;
 

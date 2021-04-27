@@ -3,6 +3,28 @@
 // Warning: Avoid customizing these values. They're used for a bird's eye view
 // of components dependent on the z-axis and are designed to all work together.
 
+$shadow-color: rgb(67,86,100) !default;
+
+$shadow-elevation-1: 0  1px  2px 0 rgba($shadow-color,0.00), 0 2px  5px 0 rgba($shadow-color,0.12) !default;
+$shadow-elevation-2: 0  2px  4px 0 rgba($shadow-color,0.10), 0 5px  8px 0 rgba($shadow-color,0.12) !default;
+$shadow-elevation-3: 0  4px  8px 0 rgba($shadow-color,0.10), 0 8px 16px 0 rgba($shadow-color,0.08) !default;
+$shadow-elevation-4: 0 16px 32px 0 rgba($shadow-color,0.17) !default;
+$shadow-elevation-5: 0 61px 84px 0 rgba($shadow-color,0.14) !default;
+
+$shadows: (
+	"1": $shadow-elevation-1,
+	"2": $shadow-elevation-2,
+	"3": $shadow-elevation-3,
+	"4": $shadow-elevation-4,
+	"5": $shadow-elevation-5,
+) !default;
+
+:root {
+	@each $elevation, $shadow in $shadows {
+		--shadow-#{$elevation}: #{$shadow};
+	}
+}
+
 // scss-docs-start zindex-stack
 $zindex-dropdown:                   1000 !default;
 $zindex-sticky:                     1020 !default;
@@ -12,13 +34,8 @@ $zindex-modal:                      1050 !default;
 $zindex-popover:                    1060 !default;
 $zindex-tooltip:                    1070 !default;
 
-$shadow-color: rgb(67,86,100) !default;
 
-$shadow-elevation-1: 0  1px  2px 0 rgba($shadow-color,0.00), 0 2px  5px 0 rgba($shadow-color,0.12) !default;
-$shadow-elevation-2: 0  2px  4px 0 rgba($shadow-color,0.10), 0 5px  8px 0 rgba($shadow-color,0.12) !default;
-$shadow-elevation-3: 0  4px  8px 0 rgba($shadow-color,0.10), 0 8px 16px 0 rgba($shadow-color,0.08) !default;
-$shadow-elevation-4: 0 16px 32px 0 rgba($shadow-color,0.17) !default;
-$shadow-elevation-5: 0 61px 84px 0 rgba($shadow-color,0.14) !default;
+
 
 //
 // $shadow-color: $black !default;

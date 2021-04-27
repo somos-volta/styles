@@ -2,13 +2,15 @@
 
 @import "settings";
 
-@import "tools";         // A set of css tools (toolbox)
+@import "tools";         // A set of css tools (toolkit)
+
 @import "global";        // Global variable system
-@import "base";          // Base browser styles
-@import "styles";        // Commons styles manager (styles)
+@import "reset";         // Normalize browser styles
+@import "base";          // Scaffolding styles
 @import "layout";        // Layout engine (grid system, responsiveness)
-@import "interactions";  //
 @import "content";       //
+@import "styles";        // Commons styles manager (styles)
+@import "interactions";  //
 @import "components";    //
 @import "utilities";     //
 @import "motion";        // Motion engine (transition & animation)

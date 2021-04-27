@@ -2,8 +2,15 @@
 @if $include-components {
 @include css-comment("Menu");
 
+  :root {
+    --menu-font-size:    var(--font-size);
+    --menu-item-spacing: .5rem;
+    --menu-item-divider: var(--divider-width) solid var(--divider-color);
+  }
+
   .menu {
     padding-left: 0;
+    line-height: 1;
     //color: var(--secondary-color);
   }
 
@@ -12,6 +19,7 @@
     //position: relative;
     margin-bottom: 0;
     vertical-align: middle;
+    font-size: var(--menu-font-size);
   }
 
   .menu-divider {
@@ -22,7 +30,6 @@
       margin: 1rem;
     }
   }
-
 
   %menu-control {
     display: block;
@@ -35,6 +42,7 @@
   .menu-label,
   .menu-link {
     @extend %menu-control;
+    padding: var(--menu-item-spacing);
   }
 
   //.menu-link {

@@ -3,10 +3,11 @@
 @include css-comment("Dropdowns");
 
   :root {
-    --dropdown-size: 320px;
+    --dropdown-size: 200px;
     --dropdown-spacing: 1rem;
     --dropdown-background: var(--surface-color);
-    --dropdown-shadow: $shadow-elevation-2;
+    --dropdown-shadow: var(--shadow-2);
+    --dropdown-border: 0;
   }
 
   %dropdown-container {
@@ -88,8 +89,6 @@
   }
 
   .dropdown-menu {
-    --dropdown-size: 200px;
-    --dropdown-spacing: 1rem;
     @extend %dropdown-container;
     display: block;
     width: var(--dropdown-size);

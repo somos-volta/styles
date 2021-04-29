@@ -1,3 +1,9 @@
+@mixin stack($orientation:"horizontal") {
+  display: flex;
+  flex-direction: row;
+  align-items: start;
+}
+
 @include exports("layout/stack") {
 @if $include-layout {
 

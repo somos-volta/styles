@@ -1,9 +1,10 @@
 @mixin backgrounds() {
 
-  .bg-light   { background-color: #f3f0ef; }
-  .bg-lighter { background-color: #fafafa; }
-  .bg-dark    { background-color: #2d2d2d; }
-  .bg-darker  { background-color: #1a1a1a; }
+  .bg-lighter { background-color: var(--surface-lower-color); }
+  .bg-light   { background-color: var(--surface-low-color); }
+  .bg-medium  { background-color: var(--surface-medium-color); }
+  .bg-dark    { background-color: var(--surface-high-color); }
+  .bg-darker  { background-color: var(--surface-higher-color); }
 
 }
 

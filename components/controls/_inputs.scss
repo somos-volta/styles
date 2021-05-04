@@ -31,6 +31,7 @@
 		--input-border: var(--base-border);
 		--input-shape: var(--input-shape);
 
+    line-height: normal;
 		border: var(--input-border);
 		border-color: var(--input-border-color);
 		border-radius: var(--input-shape);
@@ -53,6 +54,26 @@
 			font-size: .875rem;
 		}
 	}
+
+  select,
+  .select {
+    & {
+      //line-height: 1;
+      //border-radius: 0; /* chrome osx */
+      padding-right: 2em !important;
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='12' fill='%23aaaaaa'><polygon points='12,4 24,4 18,10'/></svg>");
+      background-repeat: no-repeat;
+      background-position: right center;
+      background-size: 2.25em;
+      appearance: none;
+      border-radius: var(--base-input-shape);
+    }
+    &:hover,
+    &:focus {
+      background-image: url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='36' height='12' fill='%23222222'><polygon points='12,4 24,4 18,10'/></svg>");
+      cursor: pointer;
+    }
+  }
 
 
 }

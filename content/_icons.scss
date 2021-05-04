@@ -33,11 +33,13 @@
     color: currentColor;
   }
 
-  svg.ico, svg.icon, svg.icons {
+  svg.ico,svg.icon, svg.icons {
+    width: 1em;
     g, path {
       fill: currentColor;
     }
   }
+
 
   // Icon sizes
   .icon-xs  { font-size:  8px; }

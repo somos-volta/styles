@@ -93,6 +93,17 @@
     display: block;
     width: var(--dropdown-size);
     padding: var(--dropdown-spacing);
+
+    .dropdown--open & {
+      transform: translate3d(0,0,0);
+      pointer-events: all;
+      opacity: 1;
+    }
+  }
+
+  .dropdown-right {
+    right: 0;
+    left: auto;
   }
 
   .dropdown-panel {

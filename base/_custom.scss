@@ -35,6 +35,7 @@
     --border-width:            #{$base-border-width};
 
     /* Controls */
+    --base-divider:            #{var(--divider-width) solid};
     --base-border:             #{var(--border-width) solid};
     --button-radius:           #{0};
 
@@ -88,17 +89,20 @@
     --background-color:        #{theme-color(background, $mode)};
 
     --surface-color:           #{theme-color(surface, $mode)};
+    --surface-lowest-color:    #{theme-color(surface-lowest, $mode)};
     --surface-lower-color:     #{theme-color(surface-lower, $mode)};
     --surface-low-color:       #{theme-color(surface-low, $mode)};
     --surface-medium-color:    #{theme-color(surface-medium, $mode)};
     --surface-high-color:      #{theme-color(surface-high, $mode)};
     --surface-higher-color:    #{theme-color(surface-higher, $mode)};
+    --surface-highest-color:   #{theme-color(surface-highest, $mode)};
 
     --primary-color:           #{theme-color(accent, $mode)};
     --text-color:              #{theme-color(high-emphasis, $mode)};
     --inverse-color:           #{theme-color(inverse, $mode)};
     --secondary-color:         #{theme-color(medium-emphasis, $mode)};
     --disabled-color:          #{theme-color(disabled, $mode)};
+    --hint-color:              #{theme-color(disabled, $mode)};
     --divider-color:           #{theme-color(divider, $mode)};
     --input-color:             #{theme-color(input, $mode)};
     --border-color:            #{theme-color(border, $mode)};
@@ -110,6 +114,41 @@
     --success-color:           #{theme-color(success, $mode)};
     --warning-color:           #{theme-color(warning, $mode)};
     --danger-color:            #{theme-color(danger, $mode)};
+
+    --primary-lightest-color:  #{theme-color(primary-lightest, $mode)};
+    --primary-lighter-color:   #{theme-color(primary-lighter, $mode)};
+    --primary-light-color:     #{theme-color(primary-light, $mode)};
+    --primary-dark-color:      #{theme-color(primary-dark, $mode)};
+    --primary-darker-color:    #{theme-color(primary-darker, $mode)};
+    --primary-darkest-color:   #{theme-color(primary-darkest, $mode)};
+
+    --info-lightest-color:     #{theme-color(info-lightest, $mode)};
+    --info-lighter-color:      #{theme-color(info-lighter, $mode)};
+    --info-light-color:        #{theme-color(info-light, $mode)};
+    --info-dark-color:         #{theme-color(info-dark, $mode)};
+    --info-darker-color:       #{theme-color(info-darker, $mode)};
+    --info-darkest-color:      #{theme-color(info-darkest, $mode)};
+
+    --success-lightest-color:  #{theme-color(success-lightest, $mode)};
+    --success-lighter-color:   #{theme-color(success-lighter, $mode)};
+    --success-light-color:     #{theme-color(success-light, $mode)};
+    --success-dark-color:      #{theme-color(success-dark, $mode)};
+    --success-darker-color:    #{theme-color(success-darker, $mode)};
+    --success-darkest-color:   #{theme-color(success-darkest, $mode)};
+
+    --warning-lightest-color:  #{theme-color(warning-lightest, $mode)};
+    --warning-lighter-color:   #{theme-color(warning-lighter, $mode)};
+    --warning-light-color:     #{theme-color(warning-light, $mode)};
+    --warning-dark-color:      #{theme-color(warning-dark, $mode)};
+    --warning-darker-color:    #{theme-color(warning-darker, $mode)};
+    --warning-darkest-color:   #{theme-color(warning-darkest, $mode)};
+
+    --danger-lightest-color:   #{theme-color(danger-lightest, $mode)};
+    --danger-lighter-color:    #{theme-color(danger-lighter, $mode)};
+    --danger-light-color:      #{theme-color(danger-light, $mode)};
+    --danger-dark-color:       #{theme-color(danger-dark, $mode)};
+    --danger-darker-color:     #{theme-color(danger-darker, $mode)};
+    --danger-darkest-color:    #{theme-color(danger-darkest, $mode)};
 
     --translucent-color:       #{theme-color(translucent, $mode)};
 

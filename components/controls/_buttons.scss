@@ -1,192 +1,96 @@
-  // https://www.google.com/search?q=button+styles&safe=off&sxsrf=ALeKk00HmZ8gllt9rAr7d6ecL4QDKBtgaw:1595991903184&source=lnms&tbm=isch&sa=X&ved=2ahUKEwjhhtCTvfHqAhUtGbkGHSGwDq0Q_AUoAXoECAwQAw&biw=1920&bih=1098
-//
-
-@mixin --var-solid-button($color,$prefix:"button.") {
-  $color: unquote($color);
-  .#{$prefix}#{$color} {
-    --button-border-color: var(--#{$color}-color);
-    --button-fill-color: var(--#{$color}-color);
-  }
-}
-
-@mixin outline-button($name,$color,$prefix:"button.outline.") {
-  a.#{$prefix}#{$name},
-  .#{$prefix}#{$name} {
-    --button-text-color: #{$color};
-    --button-border-color: #{$color};
-    --button-fill-color: transparent;
-
-    @include hover-focus-active {
-      --button-text-color: white;
-      --button-border-color: transparent;
-      --button-fill-color: #{$color};
-    }
-  }
-}
-@mixin solid-button($name,$color,$prefix:"button.solid.") {
-  a.#{$prefix}#{$name},
-  .#{$prefix}#{$name} {
-    --button-border-color: transparent;
-    --button-fill-color: #{$color};
-
-    @include hover-focus-active {
-      filter: brightness(1.2);
-      box-shadow: $shadow-elevation-3;
-      //--text-color: var(--inverse-color);
-      //--border-color: #{$color};
-      //--fill-color: #{$color};
-    }
-  }
-}
-
-
-@include exports("component/buttons") {
-@if $include-components {
-@include css-comment("Buttons");
+@include exports("components/buttons") {
 
   .button {
-    @extend %button;
-    //--text-color:  var(--button-text-color);
-    //--border-color:  var(--button-border-color);
-    //--fill-color: var(--button-fill-color);
-    //--shape: var(--button-shape);
-    //--padding: var(--button-padding) calc(var(--button-padding)*1.5);
-    --button-text-color: var(--text-color);
-    --button-border-color: null;
-    --button-fill-color: transparent;
-    --button-border: var(--base-border);
-    --button-shape: var(--button-radius);
+    background-color: var(--background);
+    border-color: var(--border);
+    color: var(--color);
+    padding: var(--padding);
+    border-radius: var(--shape);
 
-    border: var(--button-border);
-    border-color: var(--button-border-color);
-    border-radius: var(--button-shape);
-    background-color: var(--button-fill-color);
-    color: var(--button-text-color);
-    //font-weight:  var(--button-font-weight);
-    //line-height: var(--button-line-height);
-    padding: .5rem 1rem;
-    text-align: center;
-    font-weight:  bold;
-    transition: $transition-1;
+    transition: color .15s ease-in-out,
+                background-color .15s ease-in-out,
+                border-color .15s ease-in-out,
+                box-shadow .15s ease-in-out;
 
     @include hover-focus-active {
-      --button-text-color:  var(--primary-color);
-      color: var(--button-text-color);
-      border-color: var(--button-border-color);
-      background-color: var(--button-fill-color);
-    }
-
-    &:disabled, &.disabled {
-      --button-border-color: var(--disabled-color);
-      --button-text-color: var(--disabled-color);
-      cursor: not-allowed;
+      background-color: var(--background);
+      border-color: var(--border);
+      color: var(--color);
     }
   }
 
-  .button.solid {
-    .mode-light & {
-      --button-text-color: var(--inverse-color);
+  .button {
+    --background: var(--transparent);
+    --border: var(--border-color);
+    --color: var(--secondary-color);
+    --shape: var(--button-shape);
+
+    @include hover-focus-active {
+      --background: var(--transparent);
+      --border: var(--text-border);
+      --color: var(--text-color);
     }
-    .mode-dark & {
-      --button-text-color: var(--text-color);
-    }
-  }
 
-
-  @include outline-button("default",var(--text-color));
-  @include outline-button("primary",var(--primary-color));
-  @include outline-button("secondary",var(--secondary-color));
-  @include outline-button("info",var(--info-color));
-  @include outline-button("success",var(--success-color));
-  @include outline-button("warning",var(--warning-color));
-  @include outline-button("danger",var(--danger-color));
-
-  @include solid-button("default",var(--text-color));
-  @include solid-button("primary",var(--primary-color));
-  @include solid-button("secondary",var(--secondary-color));
-  @include solid-button("info",var(--info-color));
-  @include solid-button("success",var(--success-color));
-  @include solid-button("warning",var(--warning-color));
-  @include solid-button("danger",var(--danger-color));
-
-  %button-circle {
-    display: inline-flex;
-    justify-content: center;
-    align-items: center;
-  }
-
-  .button.shiny {
-    --shape: #{$shape-rounded-xs};
-  }
-  .button.round {
-    --shape: #{$shape-rounded-sm};
-  }
-  .button.rounded {
-    --shape: #{$shape-rounded};
-  }
-  .button.circle {
-    --shape: $shape-circle;
-    line-height: 1.2;
-    padding: 0;
     & {
-      width: $control-input;
-      height: $control-input;
+      --padding: var(--control-padding);
     }
     &.small {
-      width: $control-input-small;
-      height: $control-input-small;
+      --padding: var(--control-padding-small);
+      font-size: 12px;
     }
     &.large {
-      width: $control-input-large;
-      height: $control-input-large;
+      --padding: var(--control-padding-large);
+      font-size: 18px;
     }
+
   }
 
-  //.button.outline {
-  //  border: 2px solid;
-  //  background: transparent;
-  //}
-  //.button.solid {
-  //  border-color: transparent;
-  //}
-  .button.block {
-    width: 100%;
-  }
-  .button.small {
-    padding: .25em .5em;
-    font-size: 12px;
-  }
-  .button.large {
-    padding: .75em 1.5em;
-    font-size: 16px;
-  }
+  .button {
+    & {
 
-  .button.line {
-    padding-left: 0;
-    padding-right: 0;
-    border-color: transparent;
-    border-bottom: var(--button-border);
-    border-radius: 0;
-
-    &.danger:hover {
-      background-color: transparent;
-      color: currentColor;
     }
+
+    &.solid {
+      --border: var(--transparent);
+      &           { @include solid-button(var(--secondary-color),    var(--dark), var(--text-color)); }
+      &.primary   { @include solid-button(var(--primary-color), var(--dark), var(--primary-dark-color)); }
+      &.success   { @include solid-button(var(--success-color), var(--dark), var(--success-dark-color)); }
+      &.warning   { @include solid-button(var(--warning-color), var(--dark), var(--warning-dark-color)); }
+      &.danger    { @include solid-button(var(--danger-color),  var(--dark), var(--danger-dark-color)); }
+    }
+
+    &.ghost {
+      --border: var(--transparent);
+      &           { @include ghost-button(var(--divider-color)  ,        var(--text-color)); }
+      &.primary   { @include ghost-button(var(--primary-lighter-color),  var(--primary-color)); }
+      &.success   { @include ghost-button(var(--success-lightest-color), var(--success-color)); }
+      &.warning   { @include ghost-button(var(--warning-lightest-color), var(--warning-color)); }
+      &.danger    { @include ghost-button(var(--danger-lightest-color),  var(--danger-color)); }
+    }
+
+    &.bordered {
+      border-width: var(--border-medium);
+      --border: var(--border-color);
+      @include hover-focus-active {
+        --border: var(--text-color);
+      }
+      //&           { @include border-button(var(--primary-color),   var(--dark)); }
+    }
+
+    &.outline {
+      border-width: var(--border-thin);
+      --background: var(--transparent);
+    }
+
+    &.dashed {
+      border-width: var(--border-thin);
+      border-style: var(--border-dashed);
+    }
+
+    &.text {
+      border: var(--transparent);
+    }
+
   }
 
-  //.button.submit {
-  //  margin-top: 1rem;
-  //}
-
-
-  .button-group-toggle>.button input[type=checkbox],
-  .button-group-toggle>.button input[type=radio],
-  .button-group-toggle>.button-group>.button input[type=checkbox],
-  .button-group-toggle>.button-group>.button input[type=radio] {
-    position: absolute;
-    clip: rect(0,0,0,0);
-    pointer-events: none;
-  }
-
-}
 }

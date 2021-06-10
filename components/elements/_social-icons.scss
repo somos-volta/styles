@@ -1,5 +1,4 @@
-@include exports("component/social-icons") {
-@if $include-components {
+@include exports("components/social-icons") {
 
   .social-icons {
     & {
@@ -14,5 +13,4 @@
     }
   }
 
-}
 }

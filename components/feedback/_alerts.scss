@@ -1,6 +1,4 @@
-@include exports("component/alerts") {
-@if $include-components {
-@include css-comment("Alerts");
+@include exports("components/alerts") {
 
   .alert,
   .alert-notice,
@@ -73,5 +71,4 @@
     color: #CA6664;
   }
 
-}
 }

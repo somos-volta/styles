@@ -1,0 +1,40 @@
+@include exports("components/caret") {
+
+.caret {
+  $caret-height: .5em;
+  $caret-width:  1em;
+  & {
+    line-height: 1;
+  }
+
+  &:before {
+    content: "";
+    position: relative;
+    display: inline-block;
+    vertical-align: middle;
+    width: 0;
+    height: 0;
+    margin-right: .3em;
+    border-style: solid;
+    border-color: transparent;
+    border-width: .3em;
+  }
+}
+
+.caret,
+.caret-bottom {
+  color: currentColor;
+  &:before {
+    border-top-color: currentColor;
+    border-bottom: 0;
+  }
+}
+.caret-top {
+  color: currentColor;
+  &:before {
+    border-bottom-color: currentColor;
+    border-top: 0;
+  }
+}
+
+}

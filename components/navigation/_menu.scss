@@ -1,6 +1,4 @@
-@include exports("component/menu") {
-@if $include-components {
-@include css-comment("Menu");
+@include exports("components/menu") {
 
   :root {
     --menu-font-size:    var(--font-size);
@@ -63,5 +61,4 @@
   //  }
   //}
 
-}
 }

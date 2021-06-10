@@ -1,0 +1,26 @@
+@include exports("components/progress") {
+
+.progress {
+    --background:  #e9ecef;
+    --bar-size:    .75rem;
+    --font-size:   .75rem;
+    --shape:       var(--shape-round);
+}
+
+.progress {
+    color: azure;
+    display: flex;
+    height: var(--bar-size);
+    overflow: hidden;
+    font-size: var(--font-size);
+    background-color: var(--background);
+    border-radius: var(--shape);
+}
+
+
+.progress-bar {
+    background-color: var(--color);
+    border-radius: var(--shape-rect);
+}
+
+}

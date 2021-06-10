@@ -1,6 +1,4 @@
-@include exports("component/avatar") {
-@if $include-components {
-@include css-comment("Avatar");
+@include exports("components/avatar") {
 
 .avatar {
 	& {
@@ -12,5 +10,4 @@
 	}
 }
 
-}
 }

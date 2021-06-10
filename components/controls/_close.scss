@@ -1,6 +1,4 @@
-@include exports("component/close") {
-@if $include-components {
-@include css-comment("Close button");
+@include exports("components/close") {
 
   .close-button {
     --button-spacing: 0;
@@ -50,5 +48,4 @@
     opacity: 1;
   }
 
-}
 }

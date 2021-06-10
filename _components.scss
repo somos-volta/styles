@@ -11,6 +11,7 @@
 @import "components/icons/feather";
 @import "components/icons/ionicons";
 
+@import "components/elements/caret";
 @import "components/elements/avatar";
 @import "components/elements/badge";
 @import "components/elements/social-icons";
@@ -19,7 +20,8 @@
 @import "components/controls/inputs";
 @import "components/controls/close";
 
-@import "components/dialogs/alerts";
+@import "components/feedback/alerts";
+@import "components/feedback/progress";
 
 //@import "components/navigation/navigation";
 @import "components/navigation/menu";

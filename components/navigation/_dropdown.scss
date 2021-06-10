@@ -1,9 +1,7 @@
-@include exports("component/dropdown") {
-@if $include-components {
-@include css-comment("Dropdowns");
+@include exports("components/dropdown") {
 
   :root {
-    --dropdown-size: 200px;
+    --dropdown-size: 260px;
     --dropdown-spacing: 1rem;
     --dropdown-background: var(--surface-color);
     --dropdown-shadow: var(--shadow-2);
@@ -123,5 +121,4 @@
     }
   }
 
-}
 }

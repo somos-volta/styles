@@ -15,9 +15,7 @@ $badge-pill-padding-x:              .6em !default;
 // customizing padding or font-size on labels.
 $badge-pill-border-radius:          10rem !default;
 
-@include exports("component/badge") {
-@if $include-components {
-@include css-comment("Badges");
+@include exports("components/badge") {
 
   .badge {
     display: inline-block;
@@ -44,5 +42,4 @@ $badge-pill-border-radius:          10rem !default;
     }
   }
 
-}
 }

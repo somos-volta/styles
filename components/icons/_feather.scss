@@ -1,6 +1,5 @@
-@include exports("components/icons/feather") {
+@include exports("components/feather-icons") {
 @if $include-icons-feather {
-@include css-comment("Icons");
 
   :root {
     --icons-font: "feather";

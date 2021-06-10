@@ -1,61 +1,47 @@
-@include exports("component/inputs") {
-@if $include-components {
-@include css-comment("Inputs");
+@include exports("components/inputs") {
 
-	@include response(to phone) {
-		.form-inline {
-		}
-		.form-control {
-			margin-bottom: 1rem;
-		}
-	}
-	@include response(from phone) {
-		.form-inline {
-			display: flex;
-		}
-		.form-control {
-			display: flex;
-		}
-	}
+  .select { line-height: 1.5; }
+  .input  { line-height: 1; }
 
-	.input {
-		line-height: 1;
-	}
-	.select {
-		line-height: 1.5;
-	}
-	.select, .input {
-		--input-text-color:  var(--text-color);
-		--input-border-color:  var(--border-color);
-		--input-fill-color: transparent;
-		--input-border: var(--base-border);
-		--input-shape: var(--input-shape);
+  .select, .input {
+    --border-width:  var(--control-border-width);
+    --border-style:  var(--control-border-style);
 
+    --color:  var(--text-color);
+    --border:  var(--border-color);
+    --background: transparent;
+    --shape: var(--control-shape);
+    --padding: var(--control-padding);
+
+    appearance: none;
     line-height: normal;
-		border: var(--input-border);
-		border-color: var(--input-border-color);
-		border-radius: var(--input-shape);
-		background-color: var(--input-fill-color);
-		color: var(--input-text-color);
-		padding: .5em .75em;
-		transition: $transition-1;
+    color: var(--color);
+    border-width: var(--border-width);
+    border-style: var(--border-style);
+    border-color: var(--border);
+    border-radius: var(--shape);
+    background-color: var(--background);
+    padding: var(--padding);
 
-		&:focus {
-			--input-border-color:  var(--text-color);
-		}
+    transition: $transition-1;
 
-		//height: 42px;
-		//padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
-		//background-color: #fff;
-		//border: 1px solid #D1D1D1;
-		//box-sizing: border-box;
+    &:focus {
+      --border:  var(--text-color);
+      border-color: var(--border);
+      color: var(--color);
+    }
+    //height: 42px;
+    //padding: 6px 10px; /* The 6px vertically centers text on FF, ignored by Webkit */
+    //background-color: #fff;
+    //border: 1px solid #D1D1D1;
+    //box-sizing: border-box;
 
-		&.small {
-			font-size: .875rem;
-		}
-	}
+    &.small {
+      font-size: .875rem;
+    }
+  }
 
-  select,
+  //select,
   .select {
     & {
       //line-height: 1;
@@ -65,8 +51,7 @@
       background-repeat: no-repeat;
       background-position: right center;
       background-size: 2.25em;
-      appearance: none;
-      border-radius: var(--base-input-shape);
+      //border-radius: var(--base-input-shape);
     }
     &:hover,
     &:focus {
@@ -75,6 +60,46 @@
     }
   }
 
+  .form-check, // remove this
+  .checkbox {
+    & { display: flex; }
+    input { margin-right: .5rem; }
+  }
 
-}
+  @media (min-width: 900px) {
+    .aligned input,
+    .aligned textarea,
+    .aligned select {
+      display: inline-block;
+      width: auto;
+    }
+
+    .aligned label {
+      text-align: right;
+      display: inline-block;
+      width: 18em;
+      margin: 0 1em 0 0;
+    }
+  }
+
+  .form-group {
+    margin-bottom: 1rem;
+  }
+
+  @include response(to phone) {
+    .form-inline {
+    }
+    .form-control {
+      margin-bottom: 1rem;
+    }
+  }
+  @include response(from phone) {
+    .form-inline {
+      display: flex;
+    }
+    .form-control {
+      display: flex;
+    }
+  }
+
 }

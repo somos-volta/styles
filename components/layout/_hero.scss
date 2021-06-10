@@ -7,9 +7,7 @@ $hero-small-height:     25%;
 $hero-text-align:       left;
 
 // [1] Es para no mostrar el sobrande de .hero-line xD (corregire esto)
-@include exports("component/hero") {
-@if $include-components {
-@include css-comment("Hero");
+@include exports("components/hero") {
 
   .hero {
 
@@ -128,6 +126,5 @@ $hero-text-align:       left;
     }
   }
 
-}
 }
 

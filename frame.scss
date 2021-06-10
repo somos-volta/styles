@@ -7,12 +7,11 @@
 @import "global";        // Global variable system
 @import "reset";         // Normalize browser styles
 @import "base";          // Scaffolding styles
+@import "elements";      // Base elements
 @import "layout";        // Layout engine (grid system, responsiveness)
-@import "content";       //
 @import "styles";        // Commons styles manager (styles)
 @import "interactions";  //
 @import "components";    //
 @import "utilities";     //
 @import "motion";        // Motion engine (transition & animation)
 @import "sound";         // Sound engine (interaction feedback)
-// @import "elements";

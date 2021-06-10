@@ -1,26 +1,113 @@
+$modules: (
+  //tools,
+  //global,
+  reset,
+  base,
+  elements,
+  //layout,
+  //styles,
+  //interactions,
+  //components,
+  //utilities,
+  //motion,
+  //sound,
+) !default;
+
 $components: (
-	document,
-	divider,
-	headings,
-	paragraph,
-	abbreviation,
-	address,
-	lists,
-	quotes,
-	format,
-	links,
-	code,
-	images,
-	tables,
-	label,
-	inputs,
-	fieldset,
-	legend,
-	progress,
-	output,
-	summary,
-	template,
-	hidden
+  // Base
+  variables,
+  theme,
+  document,
+  breakpoints,
+
+  // typography
+  typeset,
+  headings,
+  paragraph, // reset
+  abbreviation, // reset
+  address, // reset
+  lists,
+  quotes, // reset
+  code,
+  format, // REVIEW
+
+  // media
+  images,
+  icons,
+  //graphic,
+
+  // data
+  tables,
+  //charts,
+
+  // forms
+  buttons,
+  inputs,
+  label, // reset
+  fieldset, // reset
+  legend, // reset
+  progress, // reset
+  output, // reset
+  summary, // reset
+
+  // Layout
+  divider,
+  columns,
+  stack,
+  container,
+  section,
+  overlay,
+  modal,
+  //pages,
+  //grid,
+  //item,
+
+  // Styles
+  colors,
+  backgrounds,
+  //surfaces,
+  borders,
+  social,
+  boxes,
+  //buttons,
+
+  // Interactions
+  link,
+  scroll,
+  cursors,
+  collapse,
+  focus,
+  zoom,
+
+  // Utilities
+  accesibility,
+  align,
+  display,
+  positions,
+  fonts,
+  shadows,
+  shapes,
+  sizes, // width, height, aspect ratio
+  text, // utilities
+
+  // Others
+  template, // reset
+  hidden, // reset
+  spacing, // utilities and elements
+
+  // Components
+  alerts,
+  close,
+  avatar,
+  badge,
+  caret,
+  social-icons,
+  //carousel,
+  //hero,
+  dropdown,
+  menu,
+  navbar,
+  footer,
 ) !default;
 
 $clear:                            transparent !default;

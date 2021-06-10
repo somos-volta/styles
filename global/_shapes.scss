@@ -21,15 +21,15 @@ $border-style-double:    double !default;
 $base-divider-width:     $border-size-thin !default;
 $base-border-width:      $border-size-medium !default;
 
-:root {
-	--shape-rect:        #{$shape-rect};
-	--shape-rounded:     #{$shape-rounded};
-	--shape-round:       #{$shape-round};
-	--shape-circle:      #{$shape-circle};
+$shapes: (
+  "rect":       $shape-rect,
+  "rounded":    $shape-rounded,
+  "round":      $shape-round,
+  "circle":     $shape-circle,
 
-	--shape-rounded-xs:  #{$shape-rounded-xs};
-	--shape-rounded-sm:  #{$shape-rounded-sm};
-	--shape-rounded-md:  #{$shape-rounded-md};
-	--shape-rounded-lg:  #{$shape-rounded-lg};
-	--shape-rounded-xl:  #{$shape-rounded-xl};
-}
+  "rounded-xs": $shape-rounded-xs,
+  "rounded-sm": $shape-rounded-sm,
+  "rounded-md": $shape-rounded-md,
+  "rounded-lg": $shape-rounded-lg,
+  "rounded-xl": $shape-rounded-xl,
+) !default;

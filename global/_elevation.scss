@@ -19,12 +19,6 @@ $shadows: (
 	"5": $shadow-elevation-5,
 ) !default;
 
-:root {
-	@each $elevation, $shadow in $shadows {
-		--shadow-#{$elevation}: #{$shadow};
-	}
-}
-
 // scss-docs-start zindex-stack
 $zindex-dropdown:                   1000 !default;
 $zindex-sticky:                     1020 !default;

@@ -1,3 +1,6 @@
+//
+// https://markdotto.com/2018/11/05/css-dark-mode/
+//
 // sitepoint.com/dealing-color-schemes-sass/
 // https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
 // https://medium.com/@dmitriy.borodiy/easy-color-theming-with-scss-bc38fd5734d1
@@ -12,6 +15,7 @@
 // https://blog.logrocket.com/how-to-create-better-themes-with-css-variables-5a3744105c74/
 // https://stackoverflow.com/questions/56490436/nested-css-custom-properties-css-variables-with-media-queries-in-ie-11
 // https://codepen.io/finnhvman/post/theming-with-css-variables-in-rgba
+// https://stackoverflow.com/questions/55329996/how-to-create-color-shades-using-css-variables-similar-to-darken-of-sass
 //
 // https://sparanoid.com/note/css-variables-guide/
 
@@ -40,8 +44,8 @@
 
   $dark-content-color:     color(white) !default;
   $dark-inverse-color:     color(black) !default;
-  $dark-surface-color:     tint(color(black), 8%) !default;
-  $dark-background-color:  color(black) !default;
+  $dark-surface-color:     tint(color(black), 15%) !default;
+  $dark-background-color:  tint(color(black), 10%) !default;
   $dark-backdrop-color:    rgba(18, 25, 24, 0.2) !default;
   $dark-selection-color:   color(blue) !default;
   $dark-highlight-color:   color(yellow) !default;

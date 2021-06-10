@@ -15,13 +15,6 @@
     white:                #FFFFFF,
   ) !default;
 
-  :root {
-    --transparent:        #{color(transparent)};
-    --current:            #{color(currentColor)};
-    --black:              #{color(black)};
-    --white:              #{color(white)};
-  }
-
   $pallete: (
     blue:                 #007bff,
     indigo:               #6610f2,
@@ -42,7 +35,7 @@
     linkedin:  (#0a66c2),
     youtube:   (#ff0000),
     whatsapp:  (#06d755)
-  );
+  ) !default;
 
   $colors: map-merge($pallete,$colors) !global;
 

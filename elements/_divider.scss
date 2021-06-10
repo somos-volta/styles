@@ -1,14 +1,12 @@
-@include exports("content/divider") {
-@if $include-content {
-@include css-comment("Divider");
+@include exports("elements/divider") {
 
-  hr {
-    --border-width: var(--border-width,1px);
-    --spacing: 3rem;
+  hr, .divider {
+    --border-width: var(--border-thin);
+    --spacing: .25rem;
     margin-top: var(--spacing);
     margin-bottom: var(--spacing);
     border-width: 0;
-    border-top: 1px solid;
+    //border-top: 1px solid var(--divider-color);
     border-top: var(--border-width) solid;
   }
 
@@ -16,5 +14,4 @@
   hr.medium    { --border-width: var(--border-medium); }
   hr.thick     { --border-width: var(--border-thick); }
 
-}
 }

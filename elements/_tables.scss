@@ -1,6 +1,4 @@
-@include exports("content/tables") {
-@if $include-content {
-@include css-comment("Tables");
+@include exports("elements/tables") {
 
 	table {
 	  width: 100%;
@@ -22,5 +20,4 @@
 	td:last-child {
 	  padding-right: 0; }
 
-}
 }

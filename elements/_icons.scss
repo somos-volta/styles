@@ -3,9 +3,7 @@
   &:before { content: $icon; }
 }
 
-@include exports("content/icons") {
-@if $include-content {
-@include css-comment("Icons");
+@include exports("elements/icons") {
 
   %icon {
     display: inline-block;
@@ -28,18 +26,19 @@
 
   }
 
-  i,.ico, .icon, .icons {
+  i, .icon {
     @extend %icon;
     color: currentColor;
   }
 
-  svg.ico,svg.icon, svg.icons {
-    width: 1em;
+  svg.icon {
+    & {
+      width: 1em;
+    }
     g, path {
       fill: currentColor;
     }
   }
-
 
   // Icon sizes
   .icon-xs  { font-size:  8px; }
@@ -49,11 +48,4 @@
   .icon-xl  { font-size: 32px; }
   .icon-xxl { font-size: 64px; }
 
-  // .icon-mini   { width: 10px; height: 10px; }
-  // .icon-small  { width: 12px; height: 12px; }
-  // .icon-medium { width: 16px; height: 16px; }
-  // .icon-big    { width: 20px; height: 20px; }
-  // .icon-large  { width: 24px; height: 24px; }
-
-}
 }

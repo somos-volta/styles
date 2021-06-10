@@ -1,29 +1,42 @@
-@include exports("content/forms") {
-@if $include-content {
-@include css-comment("Forms");
+@include exports("elements/inputs") {
 
-  // input[type="email"],
-  // input[type="number"],
-  // input[type="search"],
-  // input[type="date"],
-  // input[type="text"],
-  // input[type="tel"],
-  // input[type="url"],
-  // input[type="password"]
+  //input[type="email"],
+  //input[type="number"],
+  //input[type="search"],
+  //input[type="date"],
+  //input[type="week"],
+  //input[type="month"],
+  //input[type="time"],
+  //input[type="datetime-local"],
+  //input[type="text"],
+  //input[type="tel"],
+  //input[type="url"],
+  //input[type="password"],
+  //input[list],
+  //textarea,
+  //select {
+  //  --input-background: var(--input-color);
+  //  --input-border: var(--base-input-border);
+  //  --input-shape: var(--base-input-shape);
+  //}
 
-  input, textarea, select {
-    --input-background: var(--input-color);
-    --input-border: var(--base-input-border);
-    --input-shape: var(--base-input-shape);
-  }
-
-  input, textarea, select {
+  input[type="email"],
+  input[type="number"],
+  input[type="search"],
+  input[type="date"],
+  input[type="week"],
+  input[type="month"],
+  input[type="time"],
+  input[type="datetime-local"],
+  input[type="text"],
+  input[type="tel"],
+  input[type="url"],
+  input[type="password"],
+  input[list],
+  textarea,
+  select {
     width: 100%;
-    background-color: var(--input-background);
-    border: var(--input-border);
-    border-color: var(--border-color);
-    border-radius: var(--input-shape);
-    padding: .5em .75em;
+    //line-height: 1.25;
   }
 
   /* Removes awkward default styles on some inputs for iOS */
@@ -99,25 +112,4 @@
     cursor: pointer;
   }
 
-  @media (min-width: 900px) {
-    .aligned input,
-    .aligned textarea,
-    .aligned select {
-      display: inline-block;
-      width: auto;
-    }
-
-    .aligned label {
-      text-align: right;
-      display: inline-block;
-      width: 18em;
-      margin: 0 1em 0 0;
-    }
-  }
-
-  .form-group {
-    margin-bottom: 1rem;
-  }
-
-}
 }

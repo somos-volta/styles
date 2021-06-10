@@ -1,0 +1,9 @@
+// https://www.w3schools.com/css/css3_object-fit.asp
+
+@include exports("elements/images") {
+
+  img        { max-width: 100%; }
+  .image-2x  { width: 100%; }
+  .img-cover { object-fit: cover; }
+
+}

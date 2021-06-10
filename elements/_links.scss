@@ -1,27 +1,34 @@
-@include exports("content/links") {
-@if $include-content {
+@include exports("elements/link") {
 
-  //a {
-  //  color: inherit;
-  //}
-
-  //a.link {
-  //  font-weight: bold;
-  //  color: var(--link-color);
-  //
-  //  @include hover() {
-  //    color: var(--link-hover-color);
-  //  }
-  //}
+  a {
+    color: inherit;
+  }
 
   a.link {
     font-weight: bold;
+    color: var(--link-color);
+
+    @include hover() {
+      color: var(--link-hover-color);
+    }
+  }
+
+  a.link,
+  a.hover\:link {
+    font-weight: bold;
     border-bottom: 2px solid;
-    border-color: currentColor;
     @include hover() {
       text-decoration: none;
       border-color: currentColor;
     }
+  }
+
+  a.link {
+    border-color: currentColor;
+  }
+
+  a.hover\:link {
+    border-color: transparent;
   }
 
   .link-unistyled {
@@ -49,5 +56,4 @@
     --link-hover-color: var(--link-hover-color);
   }
 
-}
 }

@@ -1,0 +1,9 @@
+@include exports("elements/typeset") {
+  @if $include-typography-classes {
+    @each $name, $props in $typography {
+      .type-#{$name} {
+        @include expose-map($props);
+      }
+    }
+  }
+}

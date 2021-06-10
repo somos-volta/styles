@@ -1,6 +1,4 @@
-@include exports("content/lists") {
-@if $include-content {
-@include css-comment("Lists");
+@include exports("elements/lists") {
 
   ul {
     list-style: $list-style-ordered $list-bullet-position;
@@ -37,5 +35,4 @@
     margin: 0 0 1.5rem 0;
   }
 
-}
 }

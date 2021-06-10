@@ -14,9 +14,6 @@
 }
 
 @include exports("utilities/spacing") {
-@if $include-utilities {
-@include css-comment("Spacers");
-//@if $include-spacing-classes {
 
   @each $infix, $size in $spacers {
     @include margin-classes($infix,$size);
@@ -32,5 +29,4 @@
     }
   }
 
-}
 } // End Export

@@ -1,5 +1,6 @@
 @mixin set-widths($breakpoint:"",$class:"w") {
   /* widths */
+  .#{$breakpoint}#{$class}-0             { width: 0; }
   .#{$breakpoint}#{$class}-10            { width: 10%; }
   .#{$breakpoint}five.columns > .column,
   .#{$breakpoint}#{$class}-one-fifth,
@@ -24,6 +25,7 @@
   .#{$breakpoint}#{$class}-auto          { width: auto; }
 }
 @mixin set-height($breakpoint:"",$class:"h",) {
+  .#{$breakpoint}#{$class}-0                 { height: 0; }
   .#{$breakpoint}#{$class}-10                { height: 10%; }
   .#{$breakpoint}#{$class}-one-fifth,
   .#{$breakpoint}#{$class}-20                { height: 20%; }
@@ -46,6 +48,7 @@
   .#{$breakpoint}#{$class}-auto              { height: auto; }
 }
 @mixin set-vheight($breakpoint:"",$class:"vh",) {
+  .#{$breakpoint}#{$class}-0                 { height: 0; }
   .#{$breakpoint}#{$class}-10                { height: 10vh; }
   .#{$breakpoint}#{$class}-one-fifth,
   .#{$breakpoint}#{$class}-20                { height: 20vh; }
@@ -68,9 +71,7 @@
   .#{$breakpoint}#{$class}-auto              { height: auto; }
 }
 
-@include exports("utilities/size") {
-@if $include-utilities {
-@include css-comment("Sizes");
+@include exports("utilities/sizes") {
 
   //.mw-100 { max-width: 100% !important; }
   //.mh-100 { max-height: 100% !important; }
@@ -113,5 +114,5 @@
       --aspect-ratio: #{$ratio};
     }
   }
-}
+
 }

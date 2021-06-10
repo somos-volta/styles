@@ -1,6 +1,4 @@
 @include exports("utilities/align") {
-@if $include-utilities {
-@include css-comment("Alignment");
 
   .m-auto { margin-left: auto; margin-right: auto;}
 
@@ -40,5 +38,4 @@
   .center      { float: none; margin-left: auto; margin-right: auto; }
   .clear       { clear: both; }
 
-}
 }

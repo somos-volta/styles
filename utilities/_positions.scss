@@ -2,9 +2,7 @@
 // https://www.w3.org/community/webed/wiki/CSS/Training/borders
 //
 
-@include exports("utilities/layout") {
-@if $include-utilities {
-@include css-comment("Positioning");
+@include exports("utilities/positions") {
 
     .p-static,   .position-static       { position: static !important; }
     .p-relative, .position-relative     { position: relative !important; }
@@ -64,20 +62,3 @@
     .on-right         { @include overlay-on-right; }
 
 }
-}
-
-//
-// OLD sticky footer
-//
-// #wrapper {
-//   min-height: 100%;
-//   height: auto !important;
-//   height: 100%;
-//   margin: 0 auto -345px;
-// }
-//
-// #footer, #wrapper-push {
-//   height: 345px;
-//   /* clear: both; */
-// }
-//

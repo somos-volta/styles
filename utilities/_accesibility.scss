@@ -1,8 +1,6 @@
 @include exports("utilities/accesibility") {
-@if $include-utilities {
 
 	.sr-only            { @include sr-only; }
 	.sr-only-focusable  { @include sr-only-focusable; }
 
-}
 }

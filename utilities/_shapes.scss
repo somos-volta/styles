@@ -1,6 +1,4 @@
 @include exports("utilities/shapes") {
-@if $include-utilities {
-@include css-comment("Shapes");
 
   %shape {
     --box-shape: var(--shape-rect);
@@ -44,5 +42,4 @@
     border-bottom-right-radius: 0px;
   }
 
-}
 }

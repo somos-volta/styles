@@ -5,29 +5,44 @@
 }
 
 @include exports("interactions/collapse") {
-@if $include-interactions {
 
-.expandible {
-  @include collapse;
-  height: 0px;
-
-  &.opened {
-    height: auto;
-    padding-top: 1rem;
-    padding-bottom: 1rem;
-  }
+@keyframes collapse-open {
+   from {
+      pointer-events: none;
+      height: 0;
+      padding: 0;
+   }
+   to {
+      pointer-events: auto;
+      display: block;
+      height: auto;
+      padding: 1rem 0;
+   }
+   50% {
+      opacity: 0;
+   }
+   100% {
+      opacity: 1;
+   }
 }
 
-.collapsable {
-  @include collapse;
-  height: auto;
-
-  &.opened {
-    height: 0;
-    padding-top: 0rem;
-    padding-bottom: 0rem;
-  }
+@keyframes collapse-close {
+   from {
+      pointer-events: auto;
+      height: auto;
+      padding: 2rem 0;
+   }
+   to {
+      pointer-events: none;
+      height: 0;
+      padding: 0;
+   }
+   0% {
+      opacity: 1;
+   }
+   50% {
+      opacity: 0;
+   }
 }
 
-}
 }

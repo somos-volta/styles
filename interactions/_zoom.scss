@@ -1,0 +1,8 @@
+@mixin zoom-cursor {
+  cursor: url(../images/gallery-cursor.png) 24 24,pointer;
+  cursor: -webkit-image-set(url(../images/gallery-cursor.png) 1x, url(../images/gallery-cursor@2x.png) 2x) 24 24,pointer;
+}
+
+@include exports("interactions/zoom") {
+
+}

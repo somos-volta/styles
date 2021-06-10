@@ -1,5 +1,5 @@
 @mixin reset-fieldset {
-@if $include-reset {
+@include exports("reset/fieldset") {
 
   fieldset {
     // Browsers set a default `min-width: min-content;` on fieldsets,

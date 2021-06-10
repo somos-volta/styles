@@ -1,8 +1,7 @@
 @mixin reset-template {
-@if $include-reset {
+@include exports("reset/template") {
 
 	// Correct element displays
-
 	template {
 		display: none; // Add the correct display in IE
 	}

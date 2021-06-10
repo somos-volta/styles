@@ -1,9 +1,5 @@
 @mixin reset-tables {
-@if $include-reset {
-
-	//
-	// Tables
-	//
+@include exports("reset/tables") {
 
 	table {
 		border-collapse: collapse; // Prevent double borders

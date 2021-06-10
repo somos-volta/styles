@@ -1,7 +1,5 @@
 @mixin reset-links {
-@if $include-reset {
-
-	// Links
+@include exports("reset/link") {
 
 	a {
 		text-decoration: $link-decoration;

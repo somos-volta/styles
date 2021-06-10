@@ -1,5 +1,5 @@
 @mixin reset-paragraph {
-@if $include-reset {
+@include exports("reset/paragraph") {
 
 	// Reset margins on paragraphs
 	//

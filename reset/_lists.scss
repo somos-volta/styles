@@ -1,5 +1,5 @@
 @mixin reset-lists {
-@if $include-reset {
+@include exports("reset/lists") {
 
 	ol,
 	ul,

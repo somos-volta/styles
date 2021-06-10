@@ -1,5 +1,5 @@
 @mixin reset-images {
-@if $include-reset {
+@include exports("reset/images") {
 
 	//
 	// Images and content

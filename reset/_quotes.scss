@@ -1,5 +1,5 @@
 @mixin reset-quotes {
-@if $include-reset {
+@include exports("reset/quotes") {
 
 	blockquote {
 		margin: 0 0 1rem;

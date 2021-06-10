@@ -31,43 +31,43 @@
 @import "reset/hidden";
 
 @mixin reset() {
-	@if $include-reset {
 
-		@include css-section("Reset");
+  @include css-section("Reset");
 
-		// Layout
-		@include reset-document;
-		@include reset-divider;
+  // Layout
+  @include reset-document;
+  @include reset-divider;
 
-		// Typography
-		@include reset-headings;
-		@include reset-paragraph;
-		@include reset-abbreviation;
-		@include reset-address;
-		@include reset-lists;
-		@include reset-quotes;
-		@include reset-format;
-		@include reset-links;
-		@include reset-code;
+  // Typography
+  @include reset-headings;
+  @include reset-paragraph;
+  @include reset-abbreviation;
+  @include reset-address;
+  @include reset-lists;
+  @include reset-quotes;
+  @include reset-format;
+  @include reset-links;
+  @include reset-code;
 
-		// Objects
-		@include reset-images;
-		@include reset-tables;
+  // Objects
+  @include reset-images;
+  @include reset-tables;
 
-		// Forms
-		@include reset-label;
-		@include reset-inputs;
-		@include reset-fieldset;
-		@include reset-legend;
-		@include reset-progress;
-		@include reset-output;
-		@include reset-summary;
+  // Forms
+  @include reset-label;
+  @include reset-inputs;
+  @include reset-fieldset;
+  @include reset-legend;
+  @include reset-progress;
+  @include reset-output;
+  @include reset-summary;
 
-		// Misc
-		@include reset-template;
-		@include reset-hidden;
+  // Misc
+  @include reset-template;
+  @include reset-hidden;
 
-	}
 }
 
-@include reset();
+@if $include-reset {
+  @include reset;
+}

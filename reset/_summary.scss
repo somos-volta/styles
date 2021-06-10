@@ -1,5 +1,5 @@
 @mixin reset-summary {
-@if $include-reset {
+@include exports("reset/summary") {
 
 	// Correct element displays
 

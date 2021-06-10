@@ -1,5 +1,5 @@
 @mixin reset-divider {
-@if $include-reset {
+@include exports("reset/divider") {
 
 	// Content grouping
 	//

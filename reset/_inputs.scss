@@ -1,5 +1,5 @@
 @mixin reset-inputs {
-@if $include-reset {
+@include exports("reset/inputs") {
 
 	// Remove the default `border-radius` that macOS Chrome adds.
 	//

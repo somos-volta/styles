@@ -1,6 +1,4 @@
 @include exports("base/licences") {
-@if $include-licences {
-@include css-section("Licences");
 
 /*!
 //  Ionicons, v2.0.1
@@ -14,5 +12,4 @@
 //  Modified icons to fit ionicon’s grid from original.
 */
 
-}
 }

@@ -1,0 +1,275 @@
+@mixin theme-mode($name) {
+  $mode: $name;
+
+  /* #{$name} mode colors */
+
+  [data-mode="#{$name}"], .mode-#{$name}, .#{$mode} {
+
+    //--accent:     ;
+    //--content:    ;
+    //--surface:    ;
+    //--background: ;
+
+    --link-color:              #{theme-color(accent, $mode)};
+    --link-hover-color:        #{theme-color(primary-dark, $mode)};
+    --link-text-color:         #{theme-color(medium-emphasis, $mode)};
+
+    --text-color:              #{theme-color(high-emphasis, $mode)};
+    --secondary-color:         #{theme-color(medium-emphasis, $mode)};
+    --disabled-color:          #{theme-color(disabled, $mode)};
+    --hint-color:              #{theme-color(disabled, $mode)};
+    --divider-color:           #{theme-color(divider, $mode)};
+    --control-color:           #{theme-color(input, $mode)};
+    --border-color:            #{theme-color(border, $mode)};
+    --inverse-color:           #{theme-color(inverse, $mode)};
+
+    --surface-highest-color:   #{theme-color(surface-highest, $mode)};
+    --surface-higher-color:    #{theme-color(surface-higher, $mode)};
+    --surface-high-color:      #{theme-color(surface-high, $mode)};
+    --surface-medium-color:    #{theme-color(surface-medium, $mode)};
+    --surface-low-color:       #{theme-color(surface-low, $mode)};
+    --surface-lower-color:     #{theme-color(surface-lower, $mode)};
+    --surface-lowest-color:    #{theme-color(surface-lowest, $mode)};
+
+    --surface-color:           #{theme-color(surface, $mode)};
+    --background-color:        #{theme-color(background, $mode)};
+
+    // --shadow-color:            #{};
+    // --backdrop-color:          #{};
+    // --selection-color:         #{};
+    // --highlight-color:         #{};
+
+    --primary-color:           #{theme-color(accent, $mode)};
+    --info-color:              #{theme-color(info, $mode)};
+    --success-color:           #{theme-color(success, $mode)};
+    --warning-color:           #{theme-color(warning, $mode)};
+    --danger-color:            #{theme-color(danger, $mode)};
+
+    --primary-lightest-color:  #{theme-color(primary-lightest, $mode)};
+    --primary-lighter-color:   #{theme-color(primary-lighter, $mode)};
+    --primary-light-color:     #{theme-color(primary-light, $mode)};
+    --primary-dark-color:      #{theme-color(primary-dark, $mode)};
+    --primary-darker-color:    #{theme-color(primary-darker, $mode)};
+    --primary-darkest-color:   #{theme-color(primary-darkest, $mode)};
+
+    --info-lightest-color:     #{theme-color(info-lightest, $mode)};
+    --info-lighter-color:      #{theme-color(info-lighter, $mode)};
+    --info-light-color:        #{theme-color(info-light, $mode)};
+    --info-dark-color:         #{theme-color(info-dark, $mode)};
+    --info-darker-color:       #{theme-color(info-darker, $mode)};
+    --info-darkest-color:      #{theme-color(info-darkest, $mode)};
+
+    --success-lightest-color:  #{theme-color(success-lightest, $mode)};
+    --success-lighter-color:   #{theme-color(success-lighter, $mode)};
+    --success-light-color:     #{theme-color(success-light, $mode)};
+    --success-dark-color:      #{theme-color(success-dark, $mode)};
+    --success-darker-color:    #{theme-color(success-darker, $mode)};
+    --success-darkest-color:   #{theme-color(success-darkest, $mode)};
+
+    --warning-lightest-color:  #{theme-color(warning-lightest, $mode)};
+    --warning-lighter-color:   #{theme-color(warning-lighter, $mode)};
+    --warning-light-color:     #{theme-color(warning-light, $mode)};
+    --warning-dark-color:      #{theme-color(warning-dark, $mode)};
+    --warning-darker-color:    #{theme-color(warning-darker, $mode)};
+    --warning-darkest-color:   #{theme-color(warning-darkest, $mode)};
+
+    --danger-lightest-color:   #{theme-color(danger-lightest, $mode)};
+    --danger-lighter-color:    #{theme-color(danger-lighter, $mode)};
+    --danger-light-color:      #{theme-color(danger-light, $mode)};
+    --danger-dark-color:       #{theme-color(danger-dark, $mode)};
+    --danger-darker-color:     #{theme-color(danger-darker, $mode)};
+    --danger-darkest-color:    #{theme-color(danger-darkest, $mode)};
+
+    --translucent-color:       #{theme-color(translucent, $mode)};
+
+    color: var(--text-color);
+  }
+}
+
+@mixin custom {
+
+  /* Colors */
+  :root {
+    --transparent:             #{color(transparent)};
+    --current:                 #{color(current)};
+    --black:                   #{color(black)};
+    --white:                   #{color(white)};
+    --light:                   #{theme-color(high-emphasis, light)};
+    --dark:                    #{theme-color(high-emphasis, dark)};
+  }
+
+  /* Typography */
+  :root {
+
+    //* Base font */
+    --font-family:             #{$font-family-base};
+    --font-size:               #{$font-size-base};
+    --font-weight:             #{$font-weight-base};
+    --line-height:             #{$line-height-base};
+
+    //* Font weights */
+    --font-light:              #{$font-weight-light};
+    --font-regular:            #{$font-weight-regular};
+    --font-medium:             #{$font-weight-medium};
+    --font-bold:               #{$font-weight-bold};
+    --font-black:              #{$font-weight-black};
+  }
+
+  /* Layout */
+  :root {
+    //* Grid */
+    //--grid-size:              #{.5rem};                      //  8px
+    //--grid-half:              #{calc(var(--grid-size) / 2)}; //  4px
+    //--grid-margin:            #{calc(var(--grid-size) * 3)}; // 24px
+    //--grid-gutter:            #{calc(var(--grid-size) * 2)}; // 16px
+    //--grid-spacing:           #{var(--grid-gutter)};         // 16px
+    //--grid-content:           #{calc(var(--grid-size) / 2)}; //  4px
+    //--grid-baseline:          #{calc(var(--grid-size) * 4)}; // 16px
+
+    //* For elements */
+    //--size:                   #{.5rem};
+    //--unit:                   #{val(--grid-size)};
+    //--half:                   #{val(--grid-half)};
+    //--baseline:               #{var(--grid-baseline)};
+    //--spacing:                #{val(--gutter)};
+    --margin:                 #{$grid-margin};
+    --gutter:                 #{$grid-gutter};
+
+    @include response(from phone) {
+      --margin:                #{$grid-margin * 1.5};
+    }
+  }
+
+  /* Utilities */
+  :root {
+
+    //* Border widths */
+    --border-thin:      #{$border-size-thin};
+    --border-medium:    #{$border-size-medium};
+    --border-thick:     #{$border-size-thick};
+
+    //* Border styles */
+    --border-dotted:    #{$border-style-dotted};
+    --border-dashed:    #{$border-style-dashed};
+    --border-solid:     #{$border-style-solid};
+    --border-double:    #{$border-style-double};
+
+    //* Shapes */
+    @each $name, $value in $shapes {
+      --shape-#{$name}: #{$value};
+    }
+
+    //* Shadows */
+    @each $elevation, $shadow in $shadows {
+      --shadow-#{$elevation}: #{$shadow};
+    }
+  }
+
+  /* Content spacing */
+  :root {
+    --line-spacing:            #{$grid-spacing};
+    --half-spacing:            #{calc(var(--line-spacing)*.5)};
+
+    --spacing-header:          #{var(--line-spacing)};
+    --spacing-headings:        #{var(--line-spacing)};
+    --spacing-paragraph:       #{var(--line-spacing)};
+    --spacing-content:         #{var(--line-spacing)};
+    --spacing-lists:           #{var(--line-spacing)};
+    --spacing-lists-nested:    #{var(--line-spacing)};
+    --spacing-lists-item:      #{var(--line-spacing)};
+    --spacing-input:           #{var(--line-spacing)};
+    --spacing-caption:         #{calc(var(--line-spacing) * .5)};
+    --spacing-button:          #{var(--line-spacing)};
+  }
+
+  /* Forms and buttons */
+  :root {
+    --control-padding:          #{.5rem .75em};
+    --control-padding-small:    #{.25em .5em};
+    --control-padding-large:    #{.75em 1em};
+    --control-line-height:      #{1rem};
+    --control-border-width:     #{var(--border-medium)};
+    --control-border-style:     #{var(--border-solid)};
+    --control-border-color:     #{var(--border-color)};
+    --control-background:       #{var(--transparent)};
+    --control-shape:            #{var(--shape-rounded)};
+  }
+
+  /* Interactions */
+  :root {
+    --default:                #{$cursor-default};
+    --pointer:                #{$cursor-pointer};
+  }
+
+  /* Components */
+  :root {
+
+    //* Layout */
+    --main-top-spacing:        #{5rem};
+    --main-bottom-spacing:     #{5rem};
+
+    --section-spacing:         #{5rem};
+    --section-title:           #{5rem};
+
+    --container-max-width:     #{$container-width};
+    --container-fluid-width:   #{$container-fluid-width};
+
+    //* Components */
+    --navbar-background:       #{var(--surface-color)};
+    --navbar-spacing:          #{1rem 0};
+    --main-section-height:     #{90vh};
+    --brand-max-height:        #{40px};
+
+    //* Elements */
+    --divider-width:           #{$base-divider-width};
+    --border-width:            #{$base-border-width};
+
+    //* Controls */
+    --base-divider:            #{var(--divider-width) solid};
+    --base-border:             #{var(--border-width) solid};
+    --button-radius:           #{0};
+
+    --base-input-border:       #{var(--border-width) solid};
+    --base-input-shape:        #{var(--shape-rounded)};
+
+    //* Custom colors */
+    --notification-color:      #{$danger-color};
+    --discount-color:          #{var(--notification-color)};
+    --unavailable-color:       #{$danger-color};
+    --available-color:         #{#6daba3};
+  }
+
+  /* Addons */
+  :root {
+    --facebook-color:          #{brandcolor(facebook)};
+    --twitter-color:           #{brandcolor(twitter)};
+    --linkedin-color:          #{brandcolor(linkedin)};
+    --youtube-color:           #{brandcolor(youtube)};
+    --instagram-color:         #{brandcolor(instagram)};
+  }
+
+}
+
+@include exports("base/variables") {
+
+  @include theme-mode(light);
+  @include theme-mode(dark);
+  @include custom;
+
+}
+
+// @each $color, $value in $colors {
+//  --#{$color}: #{$value};
+// }
+
+// --container-width: null;
+// --container-spacing: var(--grid-margin);
+// --navbar-background: <%= data.theme.styles.navbar_background %>;
+// --navbar-behavior: var(--hide-on-scroll);
+// --main-gallery-shape:  var(--rect);
+// --main-gallery-size:   95vh;
+// --main-gallery-spcing: var(--none);
+// --main-gallery-margin: var(--grid-margin);
+// --main-gallery-shape:  var(--rect);
+// --main-gallery-size:   90vh;
+// --discount-color:      #f4717d;

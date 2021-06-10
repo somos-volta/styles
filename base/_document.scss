@@ -1,5 +1,17 @@
-@include exports("base/page") {
-@if $include-scaffold {
+@include exports("base/document") {
+
+    html {
+      scroll-behavior: smooth;
+    }
+
+    // For off canvas layout works
+    html, body {
+      height: 100%;
+    }
+
+    body {
+      overflow-x: hidden;
+    }
 
     // 2. As a best practice, apply a default `background-color`.
 
@@ -19,4 +31,16 @@
     }
 
 }
+
+@include exports("base/breakpoints") {
+
+  body {
+    content: "screen: 0";
+    @each $name, $size in $breakpoints {
+      @include response(from $name) {
+        content: "screen-#{$name}: #{$size}";
+      }
+    }
+  }
+
 }

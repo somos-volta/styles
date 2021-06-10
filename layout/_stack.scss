@@ -1,3 +1,10 @@
+// https://stackoverflow.com/questions/20626685/better-way-to-set-distance-between-flexbox-items
+// https://coryrylan.com/blog/css-gap-space-with-flexbox
+// https://yoksel.github.io/flex-cheatsheet/
+// https://www.geeksforgeeks.org/how-to-set-space-between-the-flexbox/
+// https://www.smashingmagazine.com/2018/08/flexbox-alignment/
+// https://css-tricks.com/snippets/css/a-guide-to-flexbox/
+
 @mixin stack($orientation:"horizontal") {
   display: flex;
   flex-direction: row;
@@ -5,24 +12,23 @@
 }
 
 @include exports("layout/stack") {
-@if $include-layout {
 
 	.stack {
 		&,
-		&.vertical {
+		&.horizontal {
 			display: flex;
 			flex-direction: row;
 			align-items: start;
 		}
-		&.horizontal {
-			flex-direction: columns;
+		&.vertical {
+			flex-direction: column;
 		}
 		&.center {
 			align-items: center;
 		}
 	}
 
-	.flex {
+	.flexible {
 		flex-grow: 1;
 		flex-basis: 0;
 	}
@@ -50,5 +56,4 @@
 		}
 	}
 
-}
 }

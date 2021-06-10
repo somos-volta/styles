@@ -32,7 +32,6 @@
 }
 
 @include exports("layout/modal") {
-@if $include-layout {
 
 .modal {
 	@include modal;
@@ -65,5 +64,4 @@
 	@include modal-body;
 }
 
-}
 }

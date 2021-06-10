@@ -1,5 +1,4 @@
 @include exports("layout/container") {
-@if $include-layout {
 
   %container {
     // --container-width: null;
@@ -26,6 +25,4 @@
     &.fluid  { max-width: $container-fluid-width; }
   }
 
-
-}
 }

@@ -1,0 +1,16 @@
+@include exports("styles/colors") {
+
+  // Service
+  .text-primary             { color: var(--primary-color); }
+  .text-info                { color: var(--info-color); }
+  .text-success             { color: var(--success-color); }
+  .text-warning             { color: var(--warning-color); }
+  .text-danger              { color: var(--danger-color); }
+
+  .color-primary            { color: var(--primary-color); }
+  .color-info               { color: var(--info-color); }
+  .color-success            { color: var(--success-color); }
+  .color-warning            { color: var(--warning-color); }
+  .color-danger             { color: var(--danger-color); }
+
+}

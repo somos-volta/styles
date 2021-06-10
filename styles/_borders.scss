@@ -1,13 +1,4 @@
-:root {
-  --border-thin:      #{$border-size-thin};
-  --border-medium:    #{$border-size-medium};
-  --border-thick:     #{$border-size-thick};
-
-  --border-dotted:    #{$border-style-dotted};
-  --border-dashed:    #{$border-style-dashed};
-  --border-solid:     #{$border-style-solid};
-  --border-double:    #{$border-style-double};
-}
+@include exports("styles/borders") {
 
 .border {
   & {
@@ -25,4 +16,6 @@
   &.dashed  { --border-style: var(--border-dashed); }
   &.solid   { --border-style: var(--border-solid); }
   &.double  { --border-style: var(--border-double); }
+}
+
 }

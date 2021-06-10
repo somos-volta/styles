@@ -6,3 +6,7 @@
 %glass {
 	@include glass(rgba(255,255,255,.7),20px);
 }
+
+@include exports("styles/surfaces") {
+  // Put SCSS here...
+}

@@ -1,14 +1,18 @@
-.box {
-  --box-padding: 1rem;
-  --box-shape: var(--shape-rounded-sm);
-  --box-shadow: "";
-  --border-width: var(--border-thin);
-  --border-style: var(--border-solid);
-}
+@include exports("styles/boxes") {
 
-.box {
-  border: var(--border-width) var(--border-style) var(--divider-color);
-  border-radius: var(--box-shape);
-  padding: var(--box-padding);
-  box-shadow: var(--box-shadow);
+  .box {
+    --box-padding: 1rem;
+    --box-shape: var(--shape-rounded-sm);
+    --box-shadow: "";
+    --border-width: var(--border-thin);
+    --border-style: var(--border-solid);
+  }
+
+  .box {
+    border: var(--border-width) var(--border-style) var(--divider-color);
+    border-radius: var(--box-shape);
+    padding: var(--box-padding);
+    box-shadow: var(--box-shadow);
+  }
+
 }

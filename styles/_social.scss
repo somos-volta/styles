@@ -1,0 +1,10 @@
+@include exports("styles/social") {
+
+  .color-facebook           { color: var(--facebook-color); }
+  .color-twitter            { color: var(--twitter-color); }
+  .color-linkedin           { color: var(--linkedin-color); }
+  .color-youtube            { color: var(--youtube-color); }
+  .color-instagram          { color: var(--instagram-color); }
+  .color-whatsapp           { color: var(--instagram-color); }
+
+}

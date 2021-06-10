@@ -1,11 +1,26 @@
-@mixin backgrounds() {
+@include exports("styles/backgrounds") {
 
-  .bg-lighter { background-color: var(--surface-lower-color); }
-  .bg-light   { background-color: var(--surface-low-color); }
-  .bg-medium  { background-color: var(--surface-medium-color); }
-  .bg-dark    { background-color: var(--surface-high-color); }
-  .bg-darker  { background-color: var(--surface-higher-color); }
+  .bg-lowest      { background-color: var(--surface-lowest-color); }
+  .bg-lower       { background-color: var(--surface-lower-color); }
+  .bg-low         { background-color: var(--surface-low-color); }
+  .bg-medium      { background-color: var(--surface-medium-color); }
+  .bg-high        { background-color: var(--surface-high-color); }
+  .bg-higher      { background-color: var(--surface-higher-color); }
+  .bg-highesst    { background-color: var(--surface-highest-color); }
+
+  // REMOVE
+  .bg-lightest    { background-color: var(--surface-lowest-color); }
+  .bg-lighter     { background-color: var(--surface-lower-color); }
+  .bg-light       { background-color: var(--surface-low-color); }
+  .bg-dark        { background-color: var(--surface-high-color); }
+  .bg-darker      { background-color: var(--surface-higher-color); }
+  .bg-darkest     { background-color: var(--surface-highest-color); }
+
+  // REVIEW
+  // .bg-lower-contrast        { background-color: var(--surface-lower-color); }
+  // .bg-low-contrast          { background-color: var(--surface-low-color); }
+  // .bg-medium-contrast       { background-color: var(--surface-medium-color); }
+  // .bg-high-contrast         { background-color: var(--surface-high-color); }
+  // .bg-higher-contrast       { background-color: var(--surface-higher-color); }
 
 }
-
-@include backgrounds();
